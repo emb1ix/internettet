@@ -6,20 +6,23 @@
     <title>Internettet</title>
     <link rel="shortcut icon" type="image/png" href="https://www.pngmart.com/files/7/Internet-Globe-PNG-HD.png"/>
     <style>
-        /* Ekstraheret og integreret din CSS her */
         body {
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            background-color: #1E1E2F;
-            color: #E0E0E0;
+            background-color: #1E1E2F; /* Mørk baggrund */
+            color: #E0E0E0; /* Lys grå tekst */
             line-height: 1.6;
             text-align: center;
-            transition: background-color 0.5s, color 0.5s;
+            transition: background-color 0.3s, color 0.3s; /* Glidende overgange */
+        }
+        body.light-theme {
+            background-color: #FFFFFF; /* Lys baggrund */
+            color: #000000; /* Mørk tekst */
         }
         header {
-            background-color: #4CAF50;
-            color: #FFFFFF;
+            background-color: #4CAF50; /* Grøn baggrund */
+            color: #FFFFFF; /* Hvid tekst */
             padding: 20px;
         }
         header h1 {
@@ -48,7 +51,10 @@
             background-color: #282A36;
             margin-bottom: 20px;
             border-radius: 5px;
-            transition: background-color 0.5s, color 0.5s;
+            transition: background-color 0.3s; /* Glidende overgange */
+        }
+        body.light-theme section {
+            background-color: #F0F0F0;
         }
         footer {
             background-color: #4CAF50;
@@ -59,25 +65,20 @@
             width: 100%;
             bottom: 0;
         }
-        .hidden {
-            display: none;
-        }
-        .theme-toggle {
+        .credit {
             position: fixed;
             right: 2rem;
             bottom: 2rem;
-            background: linear-gradient(40deg, #FF0080, #FF8C00 70%);
-            border: none;
+            background-color: #4CAF50;
             color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 30px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            transition: background 0.5s, transform 0.3s;
+            font-size: 1rem;
         }
-        .theme-toggle:hover {
-            background: linear-gradient(40deg, #8983F7, #A3DAFB 70%);
-            transform: scale(1.05);
+        .credit:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
@@ -95,35 +96,35 @@
         <a href="#" class="link" data-target="detmørkenet">Det Sorte Net</a>
     </nav>
 
+    <!-- Dine eksisterende sektioner -->
     <section id="dns">
         <h2>DNS</h2>
         <p>DNS (Domain Name System) er som en telefonbog for internettet...</p>
+        <!-- Quiz -->
     </section>
+    <!-- De andre sektioner kommer her -->
 
     <footer>
         © 2024 Internettets Verden
     </footer>
 
-    <button class="theme-toggle" id="themeToggle">Skift Tema</button>
+    <!-- Tema-skift knap -->
+    <button class="credit" onclick="toggleTheme()">Skift Tema</button>
 
     <script>
-        const body = document.body;
-        const sections = document.querySelectorAll('section');
-        const themeToggle = document.getElementById('themeToggle');
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+        }
 
-        themeToggle.addEventListener('click', () => {
-            const isDark = body.style.backgroundColor === 'rgb(30, 30, 47)';
-            if (isDark) {
-                body.style.backgroundColor = '#F0F0F0';
-                body.style.color = '#333';
-                sections.forEach(section => section.style.backgroundColor = '#FFFFFF');
-                themeToggle.textContent = 'Skift til Mørk Tema';
-            } else {
-                body.style.backgroundColor = '#1E1E2F';
-                body.style.color = '#E0E0E0';
-                sections.forEach(section => section.style.backgroundColor = '#282A36');
-                themeToggle.textContent = 'Skift til Lys Tema';
-            }
+        document.querySelectorAll('.link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+                const targetId = this.getAttribute('data-target');
+                document.getElementById(targetId).classList.remove('hidden');
+            });
         });
     </script>
 </body>
