@@ -121,6 +121,19 @@
         <p>DNS (Domain Name System) er som en telefonbog for internettet. Den oversætter for eksempel google.com til hjemmesidens IP-adresse, hvilket i Googles tilfælde er 142.250.147.100. Den bruger en af de tre mest brugte netværksprotokoller, som hedder UDP.
         DNS servere kan også være mål for angreb, fordi hvis du hacker en kan du gøre sådan at når du skiver google.com, så kommer du i stedet ind på IWantAVirus.org.
         Der er mange DNS servere bla. Cloudflare og Google. Cloudflares servere er tit hurtigere end googles.</p>
+
+        <h3>Beskrivelse</h3>
+        <p>DNS er et system, der oversætter domænenavne til IP-adresser, så computere og servere kan kommunikere. Det fungerer som internettets telefonbog og spiller en afgørende rolle i, hvordan internettet fungerer.</p>
+
+        <h3>Spørgsmål</h3>
+        <ul>
+            <li>Hvad er den primære funktion af DNS i internettet?</li>
+            <li>Hvad står forkortelsen DNS for?</li>
+            <li>Hvilken protokol bruges ofte til DNS-opslag?</li>
+            <li>Hvorfor kan DNS-servere være et mål for hackere?</li>
+            <li>Hvordan kan man forbedre internetforbindelsen ved at ændre DNS-server?</li>
+        </ul>
+
         <div class="quiz">
             <h3>Quiz: Hvad er DNS?</h3>
             <p>Hvad gør DNS?</p>
@@ -130,32 +143,6 @@
             <label for="dns2">Håndterer kun webtrafik</label><br>
             <input type="radio" id="dns3" name="dns1" value="wrong">
             <label for="dns3">Krypterer internetforbindelser</label><br>
-            <p>Hvad betyder DNS?</p>
-            <input type="radio" id="dns4" name="dns2" value="wrong">
-            <label for="dns4">Data Network System</label><br>
-            <input type="radio" id="dns5" name="dns2" value="correct">
-            <label for="dns5">Domain Name System</label><br>
-            <input type="radio" id="dns6" name="dns2" value="wrong">
-            <label for="dns6">Direct Network Service</label><br>
-            <p>Hvilken protokol bruges til DNS-opslag?</p>
-            <input type="radio" id="dns7" name="dns3" value="wrong">
-            <label for="dns7">HTTP</label><br>
-            <input type="radio" id="dns8" name="dns3" value="correct">
-            <label for="dns8">UDP</label><br>
-            <input type="radio" id="dns9" name="dns3" value="wrong">
-            <label for="dns9">FTP</label><br>
-            <p>Er DNS-servere normalt sikre?</p>
-            <input type="radio" id="dns10" name="dns4" value="wrong">
-            <label for="dns10">Ja, de er altid sikre</label><br>
-            <input type="radio" id="dns11" name="dns4" value="correct">
-            <label for="dns11">Nej, de kan være mål for angreb</label><br>
-            <p>Hvordan kan du bruge en DNS-server til at forbedre internethastigheden?</p>
-            <input type="radio" id="dns12" name="dns5" value="correct">
-            <label for="dns12">Ved at vælge en hurtigere offentlig DNS-server</label><br>
-            <input type="radio" id="dns13" name="dns5" value="wrong">
-            <label for="dns13">Ved at deaktivere DNS</label><br>
-            <input type="radio" id="dns14" name="dns5" value="wrong">
-            <label for="dns14">Ved at ændre din IP-adresse</label><br>
             <button onclick="checkAnswer('dns')">Tjek svar</button>
             <div class="quiz-result" id="dns-result"></div>
         </div>
@@ -164,6 +151,19 @@
     <section id="vpn" class="hidden">
         <h2>VPN</h2>
         <p>VPN (Virtual Private Network) bruges til at skabe et sikkert og privat netværk over internettet. VPN krypterer din internetforbindelse og skjuler din IP-adresse, så din online aktivitet er beskyttet mod overvågning og hacking. VPN'er bruges ofte til at få adgang til indhold, der er geografisk begrænset, eller til at beskytte data på offentlige Wi-Fi-netværk.</p>
+
+        <h3>Beskrivelse</h3>
+        <p>En VPN krypterer din internetforbindelse, beskytter din IP-adresse og skaber et privat netværk over internettet. Det er en vigtig teknologi for online privatliv og sikkerhed.</p>
+
+        <h3>Spørgsmål</h3>
+        <ul>
+            <li>Hvad er hovedformålet med at bruge en VPN?</li>
+            <li>Hvordan beskytter en VPN din internetforbindelse?</li>
+            <li>Hvad er forskellen mellem en offentlig og en privat IP-adresse i sammenhæng med VPN?</li>
+            <li>Hvordan kan en VPN hjælpe med at omgå geografiske begrænsninger?</li>
+            <li>Hvorfor er det vigtigt at bruge en VPN på offentlige Wi-Fi-netværk?</li>
+        </ul>
+        
         <div class="quiz">
             <h3>Quiz: Hvad er en VPN?</h3>
             <p>Hvad gør en VPN?</p>
@@ -178,7 +178,7 @@
         </div>
     </section>
 
-    <!-- Repeat similar sections for 'kabler', 'servere', and 'detmørkenet' -->
+    <!-- Tilføj lignende beskrivelse og spørgsmål til andre sektioner (kabler, servere, detmørkenet) -->
     <script>
         const links = document.querySelectorAll(".link");
         links.forEach(link => {
