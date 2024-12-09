@@ -113,14 +113,17 @@
         <a href="#" class="link" data-target="vpn">VPN</a>
         <a href="#" class="link" data-target="kabler">Undervandskabler</a>
         <a href="#" class="link" data-target="servere">Servere</a>
-        <a href="#" class="link" data-target="detmørkenet">Det Sorte Net</a>
+        <a href="#" class="link" data-target="detsortenet">Det Sorte Net</a>
     </nav>
 
     <section id="dns">
         <h2>DNS</h2>
         <p>DNS (Domain Name System) er som en telefonbog for internettet. Den oversætter for eksempel google.com til hjemmesidens IP-adresse, hvilket i Googles tilfælde er 142.250.147.100. Den bruger en af de tre mest brugte netværksprotokoller, som hedder UDP.
-        DNS servere kan også være mål for angreb, fordi hvis du hacker en kan du gøre sådan at når du skiver google.com, så kommer du i stedet ind på IWantAVirus.org.
-        Der er mange DNS servere bla. Cloudflare og Google. Cloudflares servere er tit hurtigere end googles.</p>
+        Netværksprotokoller er et form for sprog kun elektronik forstår.
+        DNS servere kan også være mål for angreb, fordi hvis du hacker sådan en, kan du gøre sådan at når du skiver google.com, så kommer du i stedet ind på IWantAVirus.org.
+        Der er mange DNS servere bla. Cloudflare og Google. Cloudflares servere er tit hurtigere end googles, fordi de kun fokusere på DNS, mens google fokusere mere på andre ting.
+    
+    </p>
         <div class="quiz">
             <h3>Quiz: Hvad er DNS?</h3>
             <p>Hvad gør DNS?</p>
@@ -166,47 +169,48 @@
         <p>VPN (Virtual Private Network) bruges til at skabe et sikkert og privat netværk over internettet.Det er på en måde en tunnel, der teleportere dig fra dit hjem til serveren.
             VPN krypterer din internetforbindelse og skjuler din IP-adresse, så din online aktivitet er beskyttet mod overvågning og hacking. 
             VPN'er bruges ofte til at få adgang til indhold, der er geografisk begrænset, eller til at beskytte data på offentlige Wi-Fi-netværk.</p>
+
+            
                <div class="quiz">
             <h3>Quiz: Hvad er DNS?</h3>
             <p>Hvad gør en VPN?</p>
-            <input type="radio" id="dns1" name="dns1" value="wrong">
+            <input type="radio" id="vpn1" name="dns1" value="wrong">
             <label for="dns1">Gør dig et mål for hackere</label><br>
-            <input type="radio" id="dns2" name="dns1" value="correct">
+            <input type="radio" id="vpn2" name="dns1" value="correct">
             <label for="dns2">Skjuler din IP addresse</label><br>
-            <input type="radio" id="dns3" name="dns1" value="wrong">
+            <input type="radio" id="vpn3" name="dns1" value="wrong">
             <label for="dns3">Gør din internetforbindelse hurtigere</label><br>
             <p>Hvad betyder VPN?</p>
-            <input type="radio" id="dns4" name="dns2" value="wrong">
+            <input type="radio" id="vpn4" name="dns2" value="wrong">
             <label for="dns4">Viral Populating Network</label><br>
-            <input type="radio" id="dns5" name="dns2" value="correct">
+            <input type="radio" id="vpn5" name="dns2" value="correct">
             <label for="dns5">Virtual Private Network</label><br>
-            <input type="radio" id="dns6" name="dns2" value="wrong">
+            <input type="radio" id="vpn6" name="dns2" value="wrong">
             <label for="dns6">Ventus plastatikes Nikas</label><br>
             <p>Hvad er det ord der passer bedst ind i emnet VPN?</p>
-            <input type="radio" id="dns7" name="dns3" value="correct">
+            <input type="radio" id="vpn7" name="dns3" value="correct">
             <label for="dns7">Tunnel</label><br>
-            <input type="radio" id="dns8" name="dns3" value="wrong">
+            <input type="radio" id="vpn8" name="dns3" value="wrong">
             <label for="dns8">Telefoner</label><br>
-            <input type="radio" id="dns9" name="dns3" value="wrong">
+            <input type="radio" id="vpn9" name="dns3" value="wrong">
             <label for="dns9">Program</label><br>
             <p>Er VPN normalt sikre?</p>
-            <input type="radio" id="dns10" name="dns4" value="wrong">
+            <input type="radio" id="vpn10" name="dns4" value="wrong">
             <label for="dns10">Ja, de er altid sikre</label><br>
-            <input type="radio" id="dns11" name="dns4" value="correct">
+            <input type="radio" id="vpn11" name="dns4" value="correct">
             <label for="dns11">Nej, de billige kan indholde virusser</label><br>
-            <p>Hvorfor bruger folk tit en VPM</p>
-            <input type="radio" id="dns12" name="dns5" value="wrong">
+            <p>Hvorfor bruger folk tit en VPN</p>
+            <input type="radio" id="vpn12" name="dns5" value="wrong">
             <label for="dns12">For at kunne få bedre kamera kvalitet</label><br>
-            <input type="radio" id="dns13" name="dns5" value="wrong">
+            <input type="radio" id="vpn13" name="dns5" value="wrong">
             <label for="dns13">For at få bedre internetforbindelse</label><br>
-            <input type="radio" id="dns14" name="dns5" value="correct">
+            <input type="radio" id="vpn14" name="dns5" value="correct">
             <label for="dns14">For at få billgere streaming</label><br>
             <button onclick="checkAnswer('vpn')">Tjek svar</button>
             <div class="quiz-result" id="vpn-result"></div>
         </div>
     </section>
-
-    <!-- Repeat similar sections for 'kabler', 'servere', and 'detmørkenet' -->
+    <!-- Repeat similar sections for 'kabler', 'servere', and 'detsortenet' -->
     <script>
         const links = document.querySelectorAll(".link");
         links.forEach(link => {
