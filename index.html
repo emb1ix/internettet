@@ -59,81 +59,31 @@
         .hidden {
             display: none;
         }
-        .card {
-            width: 300px;
-            height: 220px;
-            background-color: rgb(255, 255, 255);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px 30px;
-            gap: 13px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
-            margin: 20px auto;
+        .quiz {
+            margin-top: 20px;
+            text-align: left;
+            display: inline-block;
+            background-color: #333;
+            padding: 15px;
+            border-radius: 5px;
         }
-
-        #cookieSvg {
-            width: 50px;
+        .quiz input {
+            margin: 5px 0;
         }
-
-        #cookieSvg g path {
-            fill: rgb(97, 81, 81);
-        }
-
-        .cookieHeading {
-            font-size: 1.2em;
-            font-weight: 800;
-            color: rgb(26, 26, 26);
-        }
-
-        .cookieDescription {
-            text-align: center;
-            font-size: 0.7em;
-            font-weight: 600;
-            color: rgb(99, 99, 99);
-        }
-
-        .buttonContainer {
-            display: flex;
-            gap: 20px;
-            flex-direction: row;
-        }
-
-        .acceptButton {
-            width: 80px;
-            height: 30px;
-            background-color: #7b57ff;
-            transition-duration: .2s;
-            border: none;
-            color: rgb(241, 241, 241);
-            cursor: pointer;
-            font-weight: 600;
-            border-radius: 20px;
-        }
-
-        .declineButton {
-            width: 80px;
-            height: 30px;
-            background-color: rgb(218, 218, 218);
-            transition-duration: .2s;
-            color: rgb(46, 46, 46);
+        .quiz button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
             border: none;
             cursor: pointer;
-            font-weight: 600;
-            border-radius: 20px;
         }
-
-        .declineButton:hover {
-            background-color: #ebebeb;
-            transition-duration: .2s;
+        .quiz button:hover {
+            background-color: #45a049;
         }
-
-        .acceptButton:hover {
-            background-color: #9173ff;
-            transition-duration: .2s;
+        .quiz-result {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #FF5722;
         }
     </style>
 </head>
@@ -153,22 +103,117 @@
 
     <section id="dns">
         <h2>DNS</h2>
-        <p>DNS (Domain Name System) er som en telefonbog for internettet. Den oversætter for eksempel google.com til hjemmesidens IP-adresse.</p>
+        <p>DNS (Domain Name System) er som en telefonbog for internettet. Den oversætter for eksempel google.com til hjemmesidens IP-adresse, hvilket i Googles tilfælde er 142.250.147.100</p>
+        <div class="quiz">
+            <h3>Quiz: Hvad er DNS?</h3>
+            <p>Hvad gør DNS?</p>
+            <input type="radio" id="dns1" name="dns" value="correct">
+            <label for="dns1">Oversætter domænenavne til IP-adresser</label><br>
+            <input type="radio" id="dns2" name="dns" value="wrong">
+            <label for="dns2">Håndterer kun webtrafik</label><br>
+            <input type="radio" id="dns3" name="dns" value="wrong">
+            <label for="dns3">Krypterer internetforbindelser</label><br>
+            <button onclick="checkAnswer('dns', 'dns1')">Tjek svar</button>
+            <div class="quiz-result" id="dns-result"></div>
+        </div>
     </section>
 
-    <!-- Cookie Card -->
-    <div class="card">
-        <svg id="cookieSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-            <g>
-                <path d="M32 2C15.43 2 2 15.43 2 32s13.43 30 30 30 30-13.43 30-30S48.57 2 32 2z"></path>
-            </g>
-        </svg>
-        <div class="cookieHeading">Cookies!</div>
-        <div class="cookieDescription">Vi bruger cookies til at forbedre din oplevelse på vores hjemmeside.</div>
-        <div class="buttonContainer">
-            <button class="acceptButton" onclick="alert('Cookies accepteret!')">Accepter</button>
-            <button class="declineButton" onclick="alert('Cookies afvist!')">Afvis</button>
+    <section id="vpn" class="hidden">
+        <h2>VPN</h2>
+        <p>VPN (Virtual Private Network) er en form for tunnel fra dig til en server. Det kan maskere din identitet, fordi internettet tror du er serveren, når du bruger serverens IP-adresse.</p>
+        <div class="quiz">
+            <h3>Quiz: Hvad er VPN?</h3>
+            <p>Hvad gør en VPN?</p>
+            <input type="radio" id="vpn1" name="vpn" value="correct">
+            <label for="vpn1">Maskerer din identitet online</label><br>
+            <input type="radio" id="vpn2" name="vpn" value="wrong">
+            <label for="vpn2">Forbinder direkte til internettet uden nogen server</label><br>
+            <input type="radio" id="vpn3" name="vpn" value="wrong">
+            <label for="vpn3">Lager data på servere</label><br>
+            <button onclick="checkAnswer('vpn', 'vpn1')">Tjek svar</button>
+            <div class="quiz-result" id="vpn-result"></div>
         </div>
-    </div>
+    </section>
+
+    <section id="kabler" class="hidden">
+        <h2>Undervandskabler</h2>
+        <p>Internettet er forbundet via et netværk af undervandskabler, der er tusindvis af kilometer lange og ligger under havbunden. Disse kabler overfører data med høj hastighed og forbinder hele internettet.</p>
+        <div class="quiz">
+            <h3>Quiz: Hvad er undervandskabler?</h3>
+            <p>Hvad gør undervandskabler?</p>
+            <input type="radio" id="kabler1" name="kabler" value="correct">
+            <label for="kabler1">De forbinder internettrafik på tværs af kontinenter</label><br>
+            <input type="radio" id="kabler2" name="kabler" value="wrong">
+            <label for="kabler2">De er kun til opbevaring af data</label><br>
+            <input type="radio" id="kabler3" name="kabler" value="wrong">
+            <label for="kabler3">De bruges til at sende TV-signaler</label><br>
+            <button onclick="checkAnswer('kabler', 'kabler1')">Tjek svar</button>
+            <div class="quiz-result" id="kabler-result"></div>
+        </div>
+    </section>
+
+    <section id="servere" class="hidden">
+        <h2>Servere</h2>
+        <p>Servere er computere, der som regel opbevarer data, så vi kan tilgå dem over internettet. Når du ser en video eller sender en besked, går informationen gennem servere.</p>
+        <div class="quiz">
+            <h3>Quiz: Hvad er servere?</h3>
+            <p>Hvad gør servere?</p>
+            <input type="radio" id="server1" name="server" value="correct">
+            <label for="server1">De opbevarer og deler data over internettet</label><br>
+            <input type="radio" id="server2" name="server" value="wrong">
+            <label for="server2">De beskytter brugernes privatliv</label><br>
+            <input type="radio" id="server3" name="server" value="wrong">
+            <label for="server3">De bruges kun til at sende emails</label><br>
+            <button onclick="checkAnswer('server', 'server1')">Tjek svar</button>
+            <div class="quiz-result" id="server-result"></div>
+        </div>
+    </section>
+
+    <section id="detmørkenet" class="hidden">
+        <h2>Det Sorte Net</h2>
+        <p>Det mørke net er en del af internettet, der ikke er tilgængeligt via traditionelle søgemaskiner. Det bruges ofte anonymt og kræver specialsoftware som Tor-browseren for at få adgang.</p>
+        <div class="quiz">
+            <h3>Quiz: Hvad er det mørke net?</h3>
+            <p>Hvad gør det mørke net?</p>
+            <input type="radio" id="morkenet1" name="morkenet" value="correct">
+            <label for="morkenet1">Det bruges anonymt og kræver Tor-browseren</label><br>
+            <input type="radio" id="morkenet2" name="morkenet" value="wrong">
+            <label for="morkenet2">Det er den samme som internettet</label><br>
+            <input type="radio" id="morkenet3" name="morkenet" value="wrong">
+            <label for="morkenet3">Det bruges kun af regeringer</label><br>
+            <button onclick="checkAnswer('morkenet', 'morkenet1')">Tjek svar</button>
+            <div class="quiz-result" id="morkenet-result"></div>
+        </div>
+    </section>
+
+    <script>
+        function checkAnswer(section, correctAnswer) {
+            const selectedOption = document.querySelector(`input[name="${section}"]:checked`);
+            const result = document.getElementById(`${section}-result`);
+            if (selectedOption) {
+                if (selectedOption.value === 'correct') {
+                    result.textContent = 'Korrekt!';
+                    result.style.color = '#4CAF50';
+                } else {
+                    result.textContent = 'Forkert. Prøv igen!';
+                    result.style.color = '#FF5722';
+                }
+            } else {
+                result.textContent = 'Vælg et svar!';
+                result.style.color = '#FF5722';
+            }
+        }
+
+        document.querySelectorAll('.link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+                const targetId = this.getAttribute('data-target');
+                document.getElementById(targetId).classList.remove('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
