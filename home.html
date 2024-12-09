@@ -10,14 +10,14 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1E1E2F; /* Mørk baggrund */
-            color: #E0E0E0; /* Lys grå tekst */
+            background-color: #1E1E2F;
+            color: #E0E0E0;
             line-height: 1.6;
             text-align: center;
         }
         header {
-            background-color: #1abc9c; /* Lysegrøn baggrund */
-            color: #FFFFFF; /* Hvid tekst */
+            background-color: #1abc9c;
+            color: #FFFFFF;
             padding: 30px 20px;
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
@@ -118,9 +118,7 @@
 
     <section id="dns">
         <h2>DNS</h2>
-        <p>DNS (Domain Name System) er som en telefonbog for internettet. Den oversætter for eksempel google.com til hjemmesidens IP-adresse, hvilket i Googles tilfælde er 142.250.147.100. Den bruger en af de tre mest brugte netværksprotokoller, som hedder UDP.
-        DNS servere kan også være mål for angreb, fordi hvis du hacker en kan du gøre sådan at når du skiver google.com, så kommer du i stedet ind på IWantAVirus.org.
-        Der er mange DNS servere bla. Cloudflare og Google. Cloudflares servere er tit hurtigere end googles.</p>
+        <p>DNS (Domain Name System) er som en telefonbog for internettet. Den oversætter for eksempel google.com til hjemmesidens IP-adresse, hvilket i Googles tilfælde er 142.250.147.100. Den bruger en af de tre mest brugte netværksprotokoller, som hedder UDP. DNS servere kan også være mål for angreb, fordi hvis du hacker en kan du gøre sådan at når du skiver google.com, så kommer du i stedet ind på IWantAVirus.org. Der er mange DNS servere bla. Cloudflare og Google. Cloudflares servere er tit hurtigere end googles.</p>
         <div class="quiz">
             <h3>Quiz: Hvad er DNS?</h3>
             <p>Hvad gør DNS?</p>
@@ -178,7 +176,60 @@
         </div>
     </section>
 
-    <!-- Repeat similar sections for 'kabler', 'servere', and 'detmørkenet' -->
+    <section id="kabler" class="hidden">
+        <h2>Undervandskabler</h2>
+        <p>Undervandskabler er fysiske kabler, der strækker sig over havet og forbinder kontinenterne, hvilket gør det muligt at overføre data mellem lande. De fleste af verdens internetforbindelser går gennem disse kabler, og de spiller en afgørende rolle i global kommunikation. Uden disse kabler ville internettet være meget langsommere, og nogle steder kunne det være svært at få adgang til internettet.</p>
+        <div class="quiz">
+            <h3>Quiz: Undervandskabler</h3>
+            <p>Hvilken funktion har undervandskabler?</p>
+            <input type="radio" id="kabler1" name="kabler1" value="correct">
+            <label for="kabler1">De overfører data mellem kontinenter</label><br>
+            <input type="radio" id="kabler2" name="kabler1" value="wrong">
+            <label for="kabler2">De skaber trådløse forbindelser</label><br>
+            <input type="radio" id="kabler3" name="kabler1" value="wrong">
+            <label for="kabler3">De beskytter internettet mod angreb</label><br>
+            <button onclick="checkAnswer('kabler')">Tjek svar</button>
+            <div class="quiz-result" id="kabler-result"></div>
+        </div>
+    </section>
+
+    <section id="servere" class="hidden">
+        <h2>Servere</h2>
+        <p>Servere er computerprogrammer eller enheder, der leverer tjenester og ressourcer til andre enheder i et netværk. De kan være fysiske servere, der findes på datacentre, eller virtuelle servere, der kører på cloud-tjenester. Servere bruges til at gemme websteder, databaser og e-mails, og de spiller en central rolle i næsten alle internettjenester.</p>
+        <div class="quiz">
+            <h3>Quiz: Servere</h3>
+            <p>Hvad gør en server?</p>
+            <input type="radio" id="servere1" name="servere1" value="correct">
+            <label for="servere1">De leverer tjenester og ressourcer til andre enheder</label><br>
+            <input type="radio" id="servere2" name="servere1" value="wrong">
+            <label for="servere2">De opretter trådløse netværk</label><br>
+            <input type="radio" id="servere3" name="servere1" value="wrong">
+            <label for="servere3">De beskytter mod hackerangreb</label><br>
+            <button onclick="checkAnswer('servere')">Tjek svar</button>
+            <div class="quiz-result" id="servere-result"></div>
+        </div>
+    </section>
+
+    <section id="detmørkenet" class="hidden">
+        <h2>Det Sorte Net</h2>
+        <p>Det mørke net, eller Dark Web, er en del af internettet, der ikke kan tilgås via almindelige søgemaskiner. Det kræver specialiserede værktøjer som Tor for at få adgang til det. Det bruges af folk, der ønsker at bevare deres anonymitet, men det er også et sted, hvor ulovlige aktiviteter finder sted. Det mørke net er kun en lille del af det, der kaldes Deep Web, som omfatter alle ikke-indekserede websider.</p>
+        <div class="quiz">
+            <h3>Quiz: Det Mørke Net</h3>
+            <p>Hvad er Tor?</p>
+            <input type="radio" id="detmørkenet1" name="detmørkenet1" value="correct">
+            <label for="detmørkenet1">Et værktøj til at få adgang til det mørke net</label><br>
+            <input type="radio" id="detmørkenet2" name="detmørkenet1" value="wrong">
+            <label for="detmørkenet2">En browser til almindelige websider</label><br>
+            <input type="radio" id="detmørkenet3" name="detmørkenet1" value="wrong">
+            <label for="detmørkenet3">En type kryptering til e-mails</label><br>
+            <button onclick="checkAnswer('detmørkenet')">Tjek svar</button>
+            <div class="quiz-result" id="detmørkenet-result"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Internettets Verden. Alle rettigheder forbeholdes.</p>
+    </footer>
 
     <script>
         const links = document.querySelectorAll(".link");
@@ -209,3 +260,4 @@
     </script>
 </body>
 </html>
+
