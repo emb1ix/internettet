@@ -107,13 +107,39 @@
         <div class="quiz">
             <h3>Quiz: Hvad er DNS?</h3>
             <p>Hvad gør DNS?</p>
-            <input type="radio" id="dns1" name="dns" value="correct">
+            <input type="radio" id="dns1" name="dns1" value="correct">
             <label for="dns1">Oversætter domænenavne til IP-adresser</label><br>
-            <input type="radio" id="dns2" name="dns" value="wrong">
+            <input type="radio" id="dns2" name="dns1" value="wrong">
             <label for="dns2">Håndterer kun webtrafik</label><br>
-            <input type="radio" id="dns3" name="dns" value="wrong">
+            <input type="radio" id="dns3" name="dns1" value="wrong">
             <label for="dns3">Krypterer internetforbindelser</label><br>
-            <button onclick="checkAnswer('dns', 'dns1')">Tjek svar</button>
+            <p>Hvad betyder DNS?</p>
+            <input type="radio" id="dns4" name="dns2" value="wrong">
+            <label for="dns4">Data Network System</label><br>
+            <input type="radio" id="dns5" name="dns2" value="correct">
+            <label for="dns5">Domain Name System</label><br>
+            <input type="radio" id="dns6" name="dns2" value="wrong">
+            <label for="dns6">Direct Network Service</label><br>
+            <p>Hvilken protokol bruges til DNS-opslag?</p>
+            <input type="radio" id="dns7" name="dns3" value="wrong">
+            <label for="dns7">HTTP</label><br>
+            <input type="radio" id="dns8" name="dns3" value="correct">
+            <label for="dns8">UDP</label><br>
+            <input type="radio" id="dns9" name="dns3" value="wrong">
+            <label for="dns9">FTP</label><br>
+            <p>Er DNS-servere normalt sikre?</p>
+            <input type="radio" id="dns10" name="dns4" value="wrong">
+            <label for="dns10">Ja, de er altid sikre</label><br>
+            <input type="radio" id="dns11" name="dns4" value="correct">
+            <label for="dns11">Nej, de kan være mål for angreb</label><br>
+            <p>Hvordan kan du bruge en DNS-server til at forbedre internethastigheden?</p>
+            <input type="radio" id="dns12" name="dns5" value="correct">
+            <label for="dns12">Ved at vælge en hurtigere offentlig DNS-server</label><br>
+            <input type="radio" id="dns13" name="dns5" value="wrong">
+            <label for="dns13">Ved at deaktivere DNS</label><br>
+            <input type="radio" id="dns14" name="dns5" value="wrong">
+            <label for="dns14">Ved at ændre din IP-adresse</label><br>
+            <button onclick="checkAnswer('dns')">Tjek svar</button>
             <div class="quiz-result" id="dns-result"></div>
         </div>
     </section>
@@ -124,13 +150,32 @@
         <div class="quiz">
             <h3>Quiz: Hvad er VPN?</h3>
             <p>Hvad gør en VPN?</p>
-            <input type="radio" id="vpn1" name="vpn" value="correct">
+            <input type="radio" id="vpn1" name="vpn1" value="correct">
             <label for="vpn1">Maskerer din identitet online</label><br>
-            <input type="radio" id="vpn2" name="vpn" value="wrong">
+            <input type="radio" id="vpn2" name="vpn1" value="wrong">
             <label for="vpn2">Forbinder direkte til internettet uden nogen server</label><br>
-            <input type="radio" id="vpn3" name="vpn" value="wrong">
+            <input type="radio" id="vpn3" name="vpn1" value="wrong">
             <label for="vpn3">Lager data på servere</label><br>
-            <button onclick="checkAnswer('vpn', 'vpn1')">Tjek svar</button>
+            <p>Hvorfor bruger folk VPN?</p>
+            <input type="radio" id="vpn4" name="vpn2" value="correct">
+            <label for="vpn4">For at beskytte deres privatliv</label><br>
+            <input type="radio" id="vpn5" name="vpn2" value="wrong">
+            <label for="vpn5">For at øge hastigheden af deres internet</label><br>
+            <input type="radio" id="vpn6" name="vpn2" value="wrong">
+            <label for="vpn6">For at få adgang til sociale medier i deres eget land</label><br>
+            <p>Kan en VPN give dig adgang til geo-blokerede websites?</p>
+            <input type="radio" id="vpn7" name="vpn3" value="correct">
+            <label for="vpn7">Ja, det ændrer din IP-adresse til en fra et andet land</label><br>
+            <input type="radio" id="vpn8" name="vpn3" value="wrong">
+            <label for="vpn8">Nej, VPN ændrer ikke din geografiske placering</label><br>
+            <input type="radio" id="vpn9" name="vpn3" value="wrong">
+            <label for="vpn9">Nej, VPN beskytter kun din dataoverførsel</label><br>
+            <p>Er en gratis VPN lige så sikker som en betalt VPN?</p>
+            <input type="radio" id="vpn10" name="vpn4" value="wrong">
+            <label for="vpn10">Ja, alle VPN'er er sikre</label><br>
+            <input type="radio" id="vpn11" name="vpn4" value="correct">
+            <label for="vpn11">Nej, gratis VPN'er kan være usikre</label><br>
+            <button onclick="checkAnswer('vpn')">Tjek svar</button>
             <div class="quiz-result" id="vpn-result"></div>
         </div>
     </section>
@@ -141,13 +186,27 @@
         <div class="quiz">
             <h3>Quiz: Hvad er undervandskabler?</h3>
             <p>Hvad gør undervandskabler?</p>
-            <input type="radio" id="kabler1" name="kabler" value="correct">
+            <input type="radio" id="kabler1" name="kabler1" value="correct">
             <label for="kabler1">De forbinder internettrafik på tværs af kontinenter</label><br>
-            <input type="radio" id="kabler2" name="kabler" value="wrong">
+            <input type="radio" id="kabler2" name="kabler1" value="wrong">
             <label for="kabler2">De er kun til opbevaring af data</label><br>
-            <input type="radio" id="kabler3" name="kabler" value="wrong">
+            <input type="radio" id="kabler3" name="kabler1" value="wrong">
             <label for="kabler3">De bruges til at sende TV-signaler</label><br>
-            <button onclick="checkAnswer('kabler', 'kabler1')">Tjek svar</button>
+            <p>Er alle internetforbindelser afhængige af undervandskabler?</p>
+            <input type="radio" id="kabler4" name="kabler2" value="correct">
+            <label for="kabler4">Ja, de er en vigtig del af infrastrukturen</label><br>
+            <input type="radio" id="kabler5" name="kabler2" value="wrong">
+            <label for="kabler5">Nej, de fleste forbindelser er via satellitter</label><br>
+            <input type="radio" id="kabler6" name="kabler2" value="wrong">
+            <label for="kabler6">Nej, kun private virksomheder bruger undervandskabler</label><br>
+            <p>Hvor dybt ligger de fleste undervandskabler?</p>
+            <input type="radio" id="kabler7" name="kabler3" value="correct">
+            <label for="kabler7">De ligger ofte tusindvis af meter under havbunden</label><br>
+            <input type="radio" id="kabler8" name="kabler3" value="wrong">
+            <label for="kabler8">De ligger kun få meter under havbunden</label><br>
+            <input type="radio" id="kabler9" name="kabler3" value="wrong">
+            <label for="kabler9">De ligger ikke under havbunden, men over det</label><br>
+            <button onclick="checkAnswer('kabler')">Tjek svar</button>
             <div class="quiz-result" id="kabler-result"></div>
         </div>
     </section>
@@ -158,13 +217,27 @@
         <div class="quiz">
             <h3>Quiz: Hvad er servere?</h3>
             <p>Hvad gør servere?</p>
-            <input type="radio" id="server1" name="server" value="correct">
+            <input type="radio" id="server1" name="server1" value="correct">
             <label for="server1">De opbevarer og deler data over internettet</label><br>
-            <input type="radio" id="server2" name="server" value="wrong">
+            <input type="radio" id="server2" name="server1" value="wrong">
             <label for="server2">De beskytter brugernes privatliv</label><br>
-            <input type="radio" id="server3" name="server" value="wrong">
+            <input type="radio" id="server3" name="server1" value="wrong">
             <label for="server3">De bruges kun til at sende emails</label><br>
-            <button onclick="checkAnswer('server', 'server1')">Tjek svar</button>
+            <p>Er alle servere fysisk placeret på samme sted?</p>
+            <input type="radio" id="server4" name="server2" value="wrong">
+            <label for="server4">Ja, alle servere er i et datacenter</label><br>
+            <input type="radio" id="server5" name="server2" value="correct">
+            <label for="server5">Nej, servere kan være overalt i verden</label><br>
+            <input type="radio" id="server6" name="server2" value="wrong">
+            <label for="server6">Ja, de skal være tæt på brugeren</label><br>
+            <p>Er servere altid påslået?</p>
+            <input type="radio" id="server7" name="server3" value="correct">
+            <label for="server7">Ja, de er normalt 24/7 tilgængelige</label><br>
+            <input type="radio" id="server8" name="server3" value="wrong">
+            <label for="server8">Nej, de slukkes hver nat</label><br>
+            <input type="radio" id="server9" name="server3" value="wrong">
+            <label for="server9">Nej, de skal genstartes hver time</label><br>
+            <button onclick="checkAnswer('server')">Tjek svar</button>
             <div class="quiz-result" id="server-result"></div>
         </div>
     </section>
@@ -175,64 +248,61 @@
         <div class="quiz">
             <h3>Quiz: Hvad er det mørke net?</h3>
             <p>Hvad gør det mørke net?</p>
-            <input type="radio" id="morkenet1" name="morkenet" value="correct">
+            <input type="radio" id="morkenet1" name="morkenet1" value="correct">
             <label for="morkenet1">Det bruges anonymt og kræver Tor-browseren</label><br>
-            <input type="radio" id="morkenet2" name="morkenet" value="wrong">
+            <input type="radio" id="morkenet2" name="morkenet1" value="wrong">
             <label for="morkenet2">Det er den samme som internettet</label><br>
-            <input type="radio" id="morkenet3" name="morkenet" value="wrong">
+            <input type="radio" id="morkenet3" name="morkenet1" value="wrong">
             <label for="morkenet3">Det bruges kun af regeringer</label><br>
-            <button onclick="checkAnswer('morkenet', 'morkenet1')">Tjek svar</button>
+            <p>Er det mørke net ulovligt at bruge?</p>
+            <input type="radio" id="morkenet4" name="morkenet2" value="wrong">
+            <label for="morkenet4">Ja, det er ulovligt overalt</label><br>
+            <input type="radio" id="morkenet5" name="morkenet2" value="correct">
+            <label for="morkenet5">Nej, men det bruges ofte til ulovlige aktiviteter</label><br>
+            <input type="radio" id="morkenet6" name="morkenet2" value="wrong">
+            <label for="morkenet6">Ja, det er kun for kriminelle</label><br>
+            <p>Hvordan kan man få adgang til det mørke net?</p>
+            <input type="radio" id="morkenet7" name="morkenet3" value="correct">
+            <label for="morkenet7">Ved at bruge Tor-browseren</label><br>
+            <input type="radio" id="morkenet8" name="morkenet3" value="wrong">
+            <label for="morkenet8">Ved at bruge Google</label><br>
+            <input type="radio" id="morkenet9" name="morkenet3" value="wrong">
+            <label for="morkenet9">Ved at oprette en VPN-forbindelse</label><br>
+            <button onclick="checkAnswer('morkenet')">Tjek svar</button>
             <div class="quiz-result" id="morkenet-result"></div>
         </div>
     </section>
 
+    <footer>
+        <p>&copy; 2024 Internettets Verden</p>
+    </footer>
+
     <script>
-        // Function to randomize the order of quiz sections when the page loads
-        function randomizeQuizOrder() {
-            const sections = document.querySelectorAll('section');
-            const parent = document.querySelector('body');
-            
-            // Randomize the order of the sections
-            const sectionsArray = Array.from(sections);
-            const shuffledSections = sectionsArray.sort(() => Math.random() - 0.5);
-            
-            shuffledSections.forEach(section => {
-                parent.appendChild(section);
-            });
-        }
-
-        // Run the function to randomize the quiz sections order when the page loads
-        window.onload = function() {
-            randomizeQuizOrder();
-        };
-
-        function checkAnswer(section, correctAnswer) {
-            const selectedOption = document.querySelector(`input[name="${section}"]:checked`);
-            const result = document.getElementById(`${section}-result`);
-            if (selectedOption) {
-                if (selectedOption.value === 'correct') {
-                    result.textContent = 'Korrekt!';
-                    result.style.color = '#4CAF50';
-                } else {
-                    result.textContent = 'Forkert. Prøv igen!';
-                    result.style.color = '#FF5722';
-                }
-            } else {
-                result.textContent = 'Vælg et svar!';
-                result.style.color = '#FF5722';
-            }
-        }
-
-        document.querySelectorAll('.link').forEach(link => {
-            link.addEventListener('click', function(event) {
+        const links = document.querySelectorAll(".link");
+        links.forEach(link => {
+            link.addEventListener("click", function (event) {
                 event.preventDefault();
-                document.querySelectorAll('section').forEach(section => {
-                    section.classList.add('hidden');
+                const target = event.target.getAttribute("data-target");
+                document.querySelectorAll("section").forEach(section => {
+                    section.classList.add("hidden");
                 });
-                const targetId = this.getAttribute('data-target');
-                document.getElementById(targetId).classList.remove('hidden');
+                document.getElementById(target).classList.remove("hidden");
             });
         });
+
+        function checkAnswer(topic) {
+            const radios = document.querySelectorAll(`#${topic} input[type="radio"]:checked`);
+            const result = document.getElementById(`${topic}-result`);
+            let score = 0;
+
+            radios.forEach(radio => {
+                if (radio.value === "correct") {
+                    score++;
+                }
+            });
+
+            result.textContent = `Du fik ${score} ud af ${radios.length} rigtige!`;
+        }
     </script>
 </body>
 </html>
