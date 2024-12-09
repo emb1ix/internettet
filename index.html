@@ -3,50 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SlavHub</title>
-    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/emb1ix/gopnik/main/youtube-music-icon-2048x2048-11gyian5.ico"/>
+    <title>Internettets Verden</title>
+    <link rel="shortcut icon" type="image/png" href="https://www.pngmart.com/files/7/Internet-Globe-PNG-HD.png"/>
     <style>
         body {
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            background-color: #2B2B2B; /* Mørk grå baggrund */
+            background-color: #1E1E2F; /* Mørk baggrund */
             color: #E0E0E0; /* Lys grå tekst */
             line-height: 1.6;
             text-align: center;
         }
         header {
-            background-color: #D32F2F; /* Rød baggrundsfarve */
-            color: #FFFFFF; /* Hvid tekstfarve */
+            background-color: #4CAF50; /* Grøn baggrund */
+            color: #FFFFFF; /* Hvid tekst */
             padding: 20px;
-            position: relative;
         }
         header h1 {
             margin: 0;
             font-size: 36px;
             font-weight: bold;
         }
-        .header-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .logo {
-            max-width: 150px;
-            height: auto;
-            margin-right: 20px;
-            border-radius: 50%;
-            border: 3px solid #FFFFFF;
-        }
         nav {
-            background-color: #212121; /* Sort baggrundsfarve */
+            background-color: #212121;
             padding: 15px 0;
             text-align: center;
-            margin-bottom: 20px;
         }
         nav a {
-            color: #FFFFFF; /* Hvid tekstfarve */
+            color: #FFFFFF;
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.2em;
@@ -54,35 +39,17 @@
         }
         nav a:hover {
             text-decoration: underline;
-            color: #D32F2F; /* Rød ved hover */
+            color: #4CAF50;
         }
         section {
             padding: 20px;
-            background-color: #424242; /* Mørk grå baggrundsfarve */
+            background-color: #282A36;
             margin-bottom: 20px;
             border-radius: 5px;
-            color: #E0E0E0; /* Lys grå tekstfarve */
-        }
-        .bio {
-            font-size: 18px;
-            margin: 20px 0;
-        }
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-        .image-gallery img {
-            width: 100%;
-            height: 400px; /* Fixed height for all images */
-            object-fit: cover; /* Ensures image covers the set dimensions */
-            border: 3px solid #D32F2F; /* Rød kant om billederne */
-            cursor: pointer;
         }
         footer {
-            background-color: #D32F2F; /* Rød baggrundsfarve */
-            color: #FFFFFF; /* Hvid tekstfarve */
+            background-color: #4CAF50;
+            color: #FFFFFF;
             text-align: center;
             padding: 10px;
             position: fixed;
@@ -92,103 +59,50 @@
         .hidden {
             display: none;
         }
-        .gallery img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-        #user-info {
-            position: absolute;
-            top: 20px;
-            right: 10px;
-            background-color: #FFFFFF;
-            color: #D32F2F;
-            padding: 5px 10px;
-            border-radius: 3px;
-            font-weight: bold;
-            display: none; /* Skjult som standard */
-        }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <img src="https://i.postimg.cc/3J2PRrf4/dbf851fb-5544-4f95-8d1f-267bd83f9f93.jpg" alt="Gopnik Logo" class="logo">
-            <h1>SlavHub</h1>
-        </div>
-        <p>Velkommen til SlavHub - dit hub for Gopniks og russisk kultur!</p>
+        <h1>Internettets Verden</h1>
+        <p>Udforsk hvordan internettet fungerer, fra DNS til undervandskabler!</p>
     </header>
 
     <nav>
-        <a href="#" class="link" data-target="omos">Om Os</a>
-        <a href="#" class="link" data-target="billeder">Billeder</a>
-        <a href="#" class="link" data-target="videoer">Videoer</a>
-        <a href="#" class="link" data-target="kontakt">Kontakt Os</a>
-        <a href="#" class="link" data-target="historie">Om Gopniks</a>
+        <a href="#" class="link" data-target="dns">DNS</a>
+        <a href="#" class="link" data-target="vpn">VPN</a>
+        <a href="#" class="link" data-target="kabler">Undervandskabler</a>
+        <a href="#" class="link" data-target="servere">Servere</a>
+        <a href="#" class="link" data-target="detmørkenet">Det Mørke Net</a>
     </nav>
 
-    <section id="omos">
-        <h2>Om Os</h2>
-        <p>Vi er dedikeret til at levere de seneste nyheder, billeder og videoer fra den russiske gopnik kultur. Vores passion for russisk kultur driver os til at levere det bedste indhold til vores brugere. Venligt hilsen de to danske gopniks</p>
+    <section id="dns">
+        <h2>DNS</h2>
+        <p>DNS (Domain Name System) fungerer som internettets telefonbog. Når du indtaster en webadresse som www.google.com, oversætter DNS det til en IP-adresse, som computere forstår. Uden DNS ville vi skulle huske lange talrækker for at besøge hjemmesider!</p>
     </section>
 
-    <section id="billeder" class="hidden">
-        <h2>Billeder</h2>
-        <div class="image-gallery">
-            <div>
-                <img src="https://i.postimg.cc/Wb7pRtxj/Gopnik.jpg" alt="Gopnik 1">
-            </div>
-            <div>
-                <img src="https://i.postimg.cc/50JkM9hd/Gopnik-2.jpg" alt="Gopnik 2">
-            </div>
-            <div>
-                <img src="https://i.postimg.cc/x8xsHvcn/Gopnik-3.jpg" alt="Gopnik 3">
-            </div>
-            <div>
-                <img src="https://i.postimg.cc/R0VbkSkk/tmp-673f5ef6-2187-4734-8e3b-66d940cfaa5b.jpg" alt="Gopnik 4">
-            </div>
-            <div>
-                <img src="https://i.postimg.cc/4N5kqQW3/tmp-464db4ec-0a5c-4ab9-a614-28bd21c3ddb6.jpg" alt="Gopnik 5">
-            </div>
-            <div>
-                <img src="https://i.postimg.cc/C1qp2y2y/tmp-00354dad-2c62-48cc-84a0-bf28bff995b0.jpg" alt="Gopnik 7">
-            </div>
-            <div>
-                <img src="https://i.postimg.cc/FKqQGFDg/tmp-a09aca7c-6ad8-4bd0-b296-5df3d4d13713.jpg" alt="Gopnik 8">
-            </div>
-            <div>
-                <img src="https://i.postimg.cc/VsXcB8Mn/tmp-caa320e0-d7f9-491c-88c5-38f3bc8fb90d.jpg" alt="Gopnik 9">
-            </div>
-            <div>
-                <img src="https://i.postimg.cc/qRpzxyX8/tmp-f4a4f929-4016-446d-894e-8dc4f33d606e.jpg" alt="Gopnik 10">
-            </div>
-        </div>
+    <section id="vpn" class="hidden">
+        <h2>VPN</h2>
+        <p>VPN (Virtual Private Network) sikrer dine data ved at kryptere dem og sende dem gennem en sikker tunnel. Dette gør det sværere for hackere og tredjeparter at overvåge din internettrafik.</p>
     </section>
 
-    <section id="videoer" class="hidden">
-        <h2>Videoer</h2>
-        <p>Velkommen til video-sektionen. Se de nyeste videoer af Gopniks her!</p>
-        <iframe width="280" height="157" src="https://www.youtube.com/embed/afP71xwLI8Y" 
-                title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
+    <section id="kabler" class="hidden">
+        <h2>Undervandskabler</h2>
+        <p>Internettet er forbundet via et globalt netværk af undervandskabler, der strækker sig tusindvis af kilometer. Disse kabler overfører data med høj hastighed og forbinder kontinenterne.</p>
     </section>
 
-    <section id="kontakt" class="hidden">
-        <h2>Kontakt Os</h2>
-        <p>Har du spørgsmål eller vil du oprette en profil? Send os en besked på slavhub48@gmail.com</p>
+    <section id="servere" class="hidden">
+        <h2>Servere</h2>
+        <p>Servere er computere, der opbevarer data og tjenester, så vi kan tilgå dem over internettet. Når du ser en video eller sender en besked, går informationen gennem servere.</p>
     </section>
 
-    <section id="historie" class="hidden">
-        <h2>Om Gopniks</h2>
-        <p>Den Russiske Gopnik kultur started i 1980’erne som betegnelse for unge Arbejderklasse mænd,
-            som hang ud på gaden og drak alkohol og røg smøger. Det fortsatte op gennem 1990’erne og 00’erne.
-            Gopniks findes stadig, især i de Slaviske lande som Polen, Ukraine og Rusland.
-            Den typiske beklædning for Gopniks er enten normalt Arbejdertøj og lædertøj, eller den klassiske Adidas Tracksuit.
-            De bor typisk i Soviet-boligblokke, men bruger det meste af tiden på gaden, hvor de spiser Семечки (ristede og saltede solsikkefrø)
-            og drikker Квас (en fermenterede rugbrødsdrik).</p>
+    <section id="detmørkenet" class="hidden">
+        <h2>Det Mørke Net</h2>
+        <p>Det mørke net er en del af internettet, der ikke er tilgængelig via traditionelle søgemaskiner. Det bruges ofte anonymt og kræver specialsoftware som Tor-browseren for at få adgang.</p>
     </section>
+
+    <footer>
+        <p>&copy; 2024 Internettets Verden. Lær mere om netværkets fantastiske struktur!</p>
+    </footer>
 
     <script>
         document.querySelectorAll('.link').forEach(link => {
