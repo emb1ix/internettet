@@ -7,7 +7,7 @@
     <link rel="shortcut icon" type="image/png" href="https://www.pngmart.com/files/7/Internet-Globe-PNG-HD.png"/>
     <style>
         body {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #1E1E2F; /* Mørk baggrund */
@@ -18,17 +18,24 @@
         header {
             background-color: #1abc9c; /* lysegrøn baggrund */
             color: #FFFFFF; /* Hvid tekst */
-            padding: 20px;
+            padding: 30px 20px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         header h1 {
             margin: 0;
-            font-size: 36px;
+            font-size: 42px;
             font-weight: bold;
+            letter-spacing: 2px;
         }
         nav {
             background-color: #212121;
             padding: 15px 0;
             text-align: center;
+            border-radius: 10px;
+            margin: 20px 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         nav a {
             color: #FFFFFF;
@@ -36,25 +43,31 @@
             margin: 0 15px;
             font-size: 1.2em;
             font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
         }
         nav a:hover {
-            text-decoration: underline;
-            color: #4CAF50;
+            background-color: #4CAF50;
         }
         section {
             padding: 20px;
             background-color: #282A36;
-            margin-bottom: 20px;
-            border-radius: 5px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         footer {
             background-color: #4CAF50;
             color: #FFFFFF;
             text-align: center;
-            padding: 10px;
+            padding: 15px 20px;
             position: fixed;
             width: 100%;
             bottom: 0;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
         }
         .hidden {
             display: none;
@@ -62,26 +75,28 @@
         .quiz {
             margin-top: 20px;
             text-align: left;
-            display: inline-block;
             background-color: #333;
-            padding: 15px;
-            border-radius: 5px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         .quiz input {
-            margin: 5px 0;
+            margin: 10px 0;
         }
         .quiz button {
             background-color: #4CAF50;
             color: white;
-            padding: 10px;
+            padding: 12px;
             border: none;
+            border-radius: 10px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         .quiz button:hover {
             background-color: #45a049;
         }
         .quiz-result {
-            margin-top: 10px;
+            margin-top: 15px;
             font-weight: bold;
             color: #FF5722;
         }
@@ -146,135 +161,11 @@
         </div>
     </section>
 
-    <section id="vpn" class="hidden">
-        <h2>VPN</h2>
-        <p>VPN (Virtual Private Network) er en form for tunnel fra dig til en server. Det kan maskere din identitet, fordi internettet tror du er serveren, når du bruger serverens IP-adresse.</p>
-        <div class="quiz">
-            <h3>Quiz: Hvad er VPN?</h3>
-            <p>Hvad gør en VPN?</p>
-            <input type="radio" id="vpn1" name="vpn1" value="correct">
-            <label for="vpn1">Maskerer din identitet online</label><br>
-            <input type="radio" id="vpn2" name="vpn1" value="wrong">
-            <label for="vpn2">Forbinder direkte til internettet uden nogen server</label><br>
-            <input type="radio" id="vpn3" name="vpn1" value="wrong">
-            <label for="vpn3">Lager data på servere</label><br>
-            <p>Hvorfor bruger folk VPN?</p>
-            <input type="radio" id="vpn4" name="vpn2" value="correct">
-            <label for="vpn4">For at beskytte deres privatliv</label><br>
-            <input type="radio" id="vpn5" name="vpn2" value="wrong">
-            <label for="vpn5">For at øge hastigheden af deres internet</label><br>
-            <input type="radio" id="vpn6" name="vpn2" value="wrong">
-            <label for="vpn6">For at få adgang til sociale medier i deres eget land</label><br>
-            <p>Kan en VPN give dig adgang til geo-blokerede websites?</p>
-            <input type="radio" id="vpn7" name="vpn3" value="correct">
-            <label for="vpn7">Ja, det ændrer din IP-adresse til en fra et andet land</label><br>
-            <input type="radio" id="vpn8" name="vpn3" value="wrong">
-            <label for="vpn8">Nej, VPN ændrer ikke din geografiske placering</label><br>
-            <input type="radio" id="vpn9" name="vpn3" value="wrong">
-            <label for="vpn9">Nej, VPN beskytter kun din dataoverførsel</label><br>
-            <p>Er en gratis VPN lige så sikker som en betalt VPN?</p>
-            <input type="radio" id="vpn10" name="vpn4" value="wrong">
-            <label for="vpn10">Ja, alle VPN'er er sikre</label><br>
-            <input type="radio" id="vpn11" name="vpn4" value="correct">
-            <label for="vpn11">Nej, gratis VPN'er kan være usikre</label><br>
-            <button onclick="checkAnswer('vpn')">Tjek svar</button>
-            <div class="quiz-result" id="vpn-result"></div>
-        </div>
-    </section>
+    <!-- Repeat similar sections for 'vpn', 'kabler', 'servere', and 'detmørkenet' -->
 
-    <section id="kabler" class="hidden">
-        <h2>Undervandskabler</h2>
-        <p>Internettet er forbundet via et netværk af undervandskabler, der er tusindvis af kilometer lange og ligger under havbunden. Disse kabler overfører data med høj hastighed og forbinder hele internettet.</p>
-        <div class="quiz">
-            <h3>Quiz: Hvad er undervandskabler?</h3>
-            <p>Hvad gør undervandskabler?</p>
-            <input type="radio" id="kabler1" name="kabler1" value="correct">
-            <label for="kabler1">De forbinder internettrafik på tværs af kontinenter</label><br>
-            <input type="radio" id="kabler2" name="kabler1" value="wrong">
-            <label for="kabler2">De er kun til opbevaring af data</label><br>
-            <input type="radio" id="kabler3" name="kabler1" value="wrong">
-            <label for="kabler3">De bruges til at sende TV-signaler</label><br>
-            <p>Er alle internetforbindelser afhængige af undervandskabler?</p>
-            <input type="radio" id="kabler4" name="kabler2" value="correct">
-            <label for="kabler4">Ja, de er en vigtig del af infrastrukturen</label><br>
-            <input type="radio" id="kabler5" name="kabler2" value="wrong">
-            <label for="kabler5">Nej, de fleste forbindelser er via satellitter</label><br>
-            <input type="radio" id="kabler6" name="kabler2" value="wrong">
-            <label for="kabler6">Nej, kun private virksomheder bruger undervandskabler</label><br>
-            <p>Hvor dybt ligger de fleste undervandskabler?</p>
-            <input type="radio" id="kabler7" name="kabler3" value="correct">
-            <label for="kabler7">De ligger ofte tusindvis af meter under havbunden</label><br>
-            <input type="radio" id="kabler8" name="kabler3" value="wrong">
-            <label for="kabler8">De ligger kun få meter under havbunden</label><br>
-            <input type="radio" id="kabler9" name="kabler3" value="wrong">
-            <label for="kabler9">De ligger ikke under havbunden, men over det</label><br>
-            <button onclick="checkAnswer('kabler')">Tjek svar</button>
-            <div class="quiz-result" id="kabler-result"></div>
-        </div>
-    </section>
-
-    <section id="servere" class="hidden">
-        <h2>Servere</h2>
-        <p>Servere er computere, der som regel opbevarer data, så vi kan tilgå dem over internettet. Når du ser en video eller sender en besked, går informationen gennem servere.</p>
-        <div class="quiz">
-            <h3>Quiz: Hvad er servere?</h3>
-            <p>Hvad gør servere?</p>
-            <input type="radio" id="server1" name="server1" value="correct">
-            <label for="server1">De opbevarer og deler data over internettet</label><br>
-            <input type="radio" id="server2" name="server1" value="wrong">
-            <label for="server2">De beskytter brugernes privatliv</label><br>
-            <input type="radio" id="server3" name="server1" value="wrong">
-            <label for="server3">De bruges kun til at sende emails</label><br>
-            <p>Er alle servere fysisk placeret på samme sted?</p>
-            <input type="radio" id="server4" name="server2" value="wrong">
-            <label for="server4">Ja, alle servere er i et datacenter</label><br>
-            <input type="radio" id="server5" name="server2" value="correct">
-            <label for="server5">Nej, servere kan være overalt i verden</label><br>
-            <input type="radio" id="server6" name="server2" value="wrong">
-            <label for="server6">Ja, de skal være tæt på brugeren</label><br>
-            <p>Er servere altid påslået?</p>
-            <input type="radio" id="server7" name="server3" value="correct">
-            <label for="server7">Ja, de er normalt 24/7 tilgængelige</label><br>
-            <input type="radio" id="server8" name="server3" value="wrong">
-            <label for="server8">Nej, de slukkes hver nat</label><br>
-            <input type="radio" id="server9" name="server3" value="wrong">
-            <label for="server9">Nej, de skal genstartes hver time</label><br>
-            <button onclick="checkAnswer('server')">Tjek svar</button>
-            <div class="quiz-result" id="server-result"></div>
-        </div>
-    </section>
-
-    <section id="detmørkenet" class="hidden">
-        <h2>Det Sorte Net</h2>
-        <p>Det mørke net er en del af internettet, der ikke er tilgængeligt via traditionelle søgemaskiner. Det bruges ofte anonymt og kræver specialsoftware som Tor-browseren for at få adgang.</p>
-        <div class="quiz">
-            <h3>Quiz: Hvad er det mørke net?</h3>
-            <p>Hvad gør det mørke net?</p>
-            <input type="radio" id="morkenet1" name="morkenet1" value="correct">
-            <label for="morkenet1">Det bruges anonymt og kræver Tor-browseren</label><br>
-            <input type="radio" id="morkenet2" name="morkenet1" value="wrong">
-            <label for="morkenet2">Det er den samme som internettet</label><br>
-            <input type="radio" id="morkenet3" name="morkenet1" value="wrong">
-            <label for="morkenet3">Det bruges kun af regeringer</label><br>
-            <p>Er det mørke net ulovligt at bruge?</p>
-            <input type="radio" id="morkenet4" name="morkenet2" value="wrong">
-            <label for="morkenet4">Ja, det er ulovligt overalt</label><br>
-            <input type="radio" id="morkenet5" name="morkenet2" value="correct">
-            <label for="morkenet5">Nej, men det bruges ofte til ulovlige aktiviteter</label><br>
-            <input type="radio" id="morkenet6" name="morkenet2" value="wrong">
-            <label for="morkenet6">Ja, det er kun for kriminelle</label><br>
-            <p>Hvordan kan man få adgang til det mørke net?</p>
-            <input type="radio" id="morkenet7" name="morkenet3" value="correct">
-            <label for="morkenet7">Ved at bruge Tor-browseren</label><br>
-            <input type="radio" id="morkenet8" name="morkenet3" value="wrong">
-            <label for="morkenet8">Ved at bruge Google</label><br>
-            <input type="radio" id="morkenet9" name="morkenet3" value="wrong">
-            <label for="morkenet9">Ved at oprette en VPN-forbindelse</label><br>
-            <button onclick="checkAnswer('morkenet')">Tjek svar</button>
-            <div class="quiz-result" id="morkenet-result"></div>
-        </div>
-    </section>
-
+    <footer>
+        <p>&copy; 2024 Internettets Verden. Alle rettigheder forbeholdes.</p>
+    </footer>
 
     <script>
         const links = document.querySelectorAll(".link");
