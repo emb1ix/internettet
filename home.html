@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internettet</title>
+    <title>Internettets Verden</title>
     <link rel="shortcut icon" type="image/png" href="https://www.pngmart.com/files/7/Internet-Globe-PNG-HD.png"/>
     <style>
         body {
@@ -118,44 +118,14 @@
 
     <section id="dns">
         <h2>DNS</h2>
-        <p>DNS (Domain Name System) er som en telefonbog for internettet. Den oversætter for eksempel google.com til hjemmesidens IP-adresse, hvilket i Googles tilfælde er 142.250.147.100. Den bruger en af de tre mest brugte netværksprotokoller, som hedder UDP.
-        DNS servere kan også være mål for angreb, fordi hvis du hacker en kan du gøre sådan at når du skiver google.com, så kommer du i stedet ind på IWantAVirus.org.
-        Der er mange DNS servere bla. Cloudflare og Google. Cloudflares servere er tit hurtigere end googles.</p>
+        <p>DNS (Domain Name System) er som en telefonbog for internettet. Den oversætter domænenavne som google.com til IP-adresser, som computere forstår.</p>
         <div class="quiz">
-            <h3>Quiz: Hvad er DNS?</h3>
+            <h3>Quiz: DNS</h3>
             <p>Hvad gør DNS?</p>
             <input type="radio" id="dns1" name="dns1" value="correct">
             <label for="dns1">Oversætter domænenavne til IP-adresser</label><br>
             <input type="radio" id="dns2" name="dns1" value="wrong">
-            <label for="dns2">Håndterer kun webtrafik</label><br>
-            <input type="radio" id="dns3" name="dns1" value="wrong">
-            <label for="dns3">Krypterer internetforbindelser</label><br>
-            <p>Hvad betyder DNS?</p>
-            <input type="radio" id="dns4" name="dns2" value="wrong">
-            <label for="dns4">Data Network System</label><br>
-            <input type="radio" id="dns5" name="dns2" value="correct">
-            <label for="dns5">Domain Name System</label><br>
-            <input type="radio" id="dns6" name="dns2" value="wrong">
-            <label for="dns6">Direct Network Service</label><br>
-            <p>Hvilken protokol bruges til DNS-opslag?</p>
-            <input type="radio" id="dns7" name="dns3" value="wrong">
-            <label for="dns7">HTTP</label><br>
-            <input type="radio" id="dns8" name="dns3" value="correct">
-            <label for="dns8">UDP</label><br>
-            <input type="radio" id="dns9" name="dns3" value="wrong">
-            <label for="dns9">FTP</label><br>
-            <p>Er DNS-servere normalt sikre?</p>
-            <input type="radio" id="dns10" name="dns4" value="wrong">
-            <label for="dns10">Ja, de er altid sikre</label><br>
-            <input type="radio" id="dns11" name="dns4" value="correct">
-            <label for="dns11">Nej, de kan være mål for angreb</label><br>
-            <p>Hvordan kan du bruge en DNS-server til at forbedre internethastigheden?</p>
-            <input type="radio" id="dns12" name="dns5" value="correct">
-            <label for="dns12">Ved at vælge en hurtigere offentlig DNS-server</label><br>
-            <input type="radio" id="dns13" name="dns5" value="wrong">
-            <label for="dns13">Ved at deaktivere DNS</label><br>
-            <input type="radio" id="dns14" name="dns5" value="wrong">
-            <label for="dns14">Ved at ændre din IP-adresse</label><br>
+            <label for="dns2">Krypterer internettrafik</label><br>
             <button onclick="checkAnswer('dns')">Tjek svar</button>
             <div class="quiz-result" id="dns-result"></div>
         </div>
@@ -163,22 +133,64 @@
 
     <section id="vpn" class="hidden">
         <h2>VPN</h2>
-        <p>VPN (Virtual Private Network) bruges til at skabe et sikkert og privat netværk over internettet. VPN krypterer din internetforbindelse og skjuler din IP-adresse, så din online aktivitet er beskyttet mod overvågning og hacking. VPN'er bruges ofte til at få adgang til indhold, der er geografisk begrænset, eller til at beskytte data på offentlige Wi-Fi-netværk.</p>
+        <p>En VPN (Virtual Private Network) sikrer, at din internettrafik er krypteret, og din IP-adresse skjules for andre.</p>
         <div class="quiz">
-            <h3>Quiz: Hvad er en VPN?</h3>
+            <h3>Quiz: VPN</h3>
             <p>Hvad gør en VPN?</p>
             <input type="radio" id="vpn1" name="vpn1" value="correct">
             <label for="vpn1">Krypterer din internetforbindelse</label><br>
             <input type="radio" id="vpn2" name="vpn1" value="wrong">
-            <label for="vpn2">Fjerner al internetaktivitet</label><br>
-            <input type="radio" id="vpn3" name="vpn1" value="wrong">
-            <label for="vpn3">Ændrer din IP-adresse til en tilfældig adresse</label><br>
+            <label for="vpn2">Skifter din IP-adresse til tilfældige værdier</label><br>
             <button onclick="checkAnswer('vpn')">Tjek svar</button>
             <div class="quiz-result" id="vpn-result"></div>
         </div>
     </section>
 
-    <!-- Repeat similar sections for 'kabler', 'servere', and 'detmørkenet' -->
+    <section id="kabler" class="hidden">
+        <h2>Undervandskabler</h2>
+        <p>Undervandskabler forbinder kontinenter med internettet og muliggør global kommunikation.</p>
+        <div class="quiz">
+            <h3>Quiz: Undervandskabler</h3>
+            <p>Hvorfor er undervandskabler vigtige?</p>
+            <input type="radio" id="kabler1" name="kabler1" value="correct">
+            <label for="kabler1">De muliggør global internetforbindelse</label><br>
+            <input type="radio" id="kabler2" name="kabler1" value="wrong">
+            <label for="kabler2">De forbinder Wi-Fi routere</label><br>
+            <button onclick="checkAnswer('kabler')">Tjek svar</button>
+            <div class="quiz-result" id="kabler-result"></div>
+        </div>
+    </section>
+
+    <section id="servere" class="hidden">
+        <h2>Servere</h2>
+        <p>En server er en computer, der leverer data til andre computere på nettet.</p>
+        <div class="quiz">
+            <h3>Quiz: Servere</h3>
+            <p>Hvad er en server?</p>
+            <input type="radio" id="server1" name="server1" value="correct">
+            <label for="server1">En computer, der leverer data</label><br>
+            <input type="radio" id="server2" name="server1" value="wrong">
+            <label for="server2">Et program, der downloader data</label><br>
+            <button onclick="checkAnswer('servere')">Tjek svar</button>
+            <div class="quiz-result" id="server-result"></div>
+        </div>
+    </section>
+
+    <section id="detmørkenet" class="hidden">
+        <h2>Det Sorte Net</h2>
+        <p>Det sorte net, også kaldet Dark Web, er en skjult del af internettet, der kun kan tilgås med særlige værktøjer som Tor-browseren.</p>
+        <div class="quiz">
+            <h3>Quiz: Det Sorte Net</h3>
+            <p>Hvad er det sorte net?</p>
+            <input type="radio" id="dark1" name="dark1" value="correct">
+            <label for="dark1">En skjult del af internettet</label><br>
+            <input type="radio" id="dark2" name="dark1" value="wrong">
+            <label for="dark2">En offentlig internetplatform</label><br>
+            <button onclick="checkAnswer('detmørkenet')">Tjek svar</button>
+            <div class="quiz-result" id="dark-result"></div>
+        </div>
+    </section>
+
     <script>
         const links = document.querySelectorAll(".link");
         links.forEach(link => {
