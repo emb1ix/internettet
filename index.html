@@ -85,6 +85,128 @@
             font-weight: bold;
             color: #FF5722;
         }
+
+        /* Nye elementer */
+        .credit {
+            position: fixed;
+            right: 2rem;
+            bottom: 2rem;
+            color: white;
+        }
+
+        .credit a {
+            color: inherit;
+        }
+
+        .main-circle {
+            width: 40rem;
+            height: 40rem;
+            border-radius: 100%;
+            background: linear-gradient(40deg, #FF0080, #FF8C00 70%);
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            transform: translate(-50%, -70%);
+        }
+
+        .phone {
+            position: relative;
+            z-index: 2;
+            width: 18rem;
+            height: 17rem;
+            background-color: inherit;
+            box-shadow: 0 4px 35px rgba(0, 0, 0, .1);
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu {
+            font-size: 80%;
+            opacity: .4;
+            padding: .8rem 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .icons {
+            display: flex;
+            margin-top: .5rem;
+        }
+
+        .battery {
+            width: .85rem;
+            height: .45rem;
+            background-color: black;
+        }
+
+        .network {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 6.8px 7.2px 6.8px;
+            border-color: transparent transparent black transparent;
+            transform: rotate(135deg);
+            margin: .12rem .5rem;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            text-align: center;
+            width: 70%;
+            transform: translateY(5%);
+        }
+
+        .circle {
+            position: relative;
+            border-radius: 100%;
+            width: 8rem;
+            height: 8rem;
+            background: linear-gradient(40deg, #FF0080, #FF8C00 70%);
+            margin: auto;
+        }
+
+        .crescent {
+            position: absolute;
+            border-radius: 100%;
+            right: 0;
+            width: 6rem;
+            height: 6rem;
+            background: white;
+            transform: scale(0);
+            transform-origin: top right;
+            transition: transform .6s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        label {
+            width: 100%;
+            background-color: rgba(0, 0, 0, .1);
+            border-radius: 100px;
+            margin: 1.8rem 0 4rem 0;
+            cursor: pointer;
+        }
+
+        .toggle {
+            width: 50%;
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, .15);
+            transition: transform .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .names {
+            font-size: 90%;
+            font-weight: bolder;
+            color: black;
+            width: 65%;
+            margin-left: 17.5%;
+            margin-top: 6.5%;
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
 </head>
 <body>
@@ -101,109 +223,23 @@
         <a href="#" class="link" data-target="detmørkenet">Det Sorte Net</a>
     </nav>
 
-    <section id="dns">
-        <h2>DNS</h2>
-        <p>DNS (Domain Name System) er som en telefonbog for internettet. Den oversætter for eksempel google.com til hjemmesidens IP-adresse, hvilket i Googles tilfælde er 142.250.147.100</p>
-        <div class="quiz">
-            <h3>Quiz: Hvad er DNS?</h3>
-            <p>Hvad gør DNS?</p>
-            <input type="radio" id="dns1" name="dns" value="correct">
-            <label for="dns1">Oversætter domænenavne til IP-adresser</label><br>
-            <input type="radio" id="dns2" name="dns" value="wrong">
-            <label for="dns2">Håndterer kun webtrafik</label><br>
-            <input type="radio" id="dns3" name="dns" value="wrong">
-            <label for="dns3">Krypterer internetforbindelser</label><br>
-            <button onclick="checkAnswer('dns', 'dns1')">Tjek svar</button>
-            <div class="quiz-result" id="dns-result"></div>
+    <main class="phone">
+        <div class="menu">
+            <span class="network"></span>
+            <span class="battery"></span>
         </div>
-    </section>
+        <div class="content">
+            <div class="circle">
+                <div class="crescent"></div>
+            </div>
+        </div>
+    </main>
 
-    <section id="vpn" class="hidden">
-        <h2>VPN</h2>
-        <p>VPN (Virtual Private Network) er en form for tunnel fra dig til en server. Det kan maskere din identitet, fordi internettet tror du er serveren, når du bruger serverens IP-adresse.</p>
-        <div class="quiz">
-            <h3>Quiz: Hvad er VPN?</h3>
-            <p>Hvad gør en VPN?</p>
-            <input type="radio" id="vpn1" name="vpn" value="correct">
-            <label for="vpn1">Maskerer din identitet online</label><br>
-            <input type="radio" id="vpn2" name="vpn" value="wrong">
-            <label for="vpn2">Forbinder direkte til internettet uden nogen server</label><br>
-            <input type="radio" id="vpn3" name="vpn" value="wrong">
-            <label for="vpn3">Lager data på servere</label><br>
-            <button onclick="checkAnswer('vpn', 'vpn1')">Tjek svar</button>
-            <div class="quiz-result" id="vpn-result"></div>
-        </div>
-    </section>
-
-    <section id="kabler" class="hidden">
-        <h2>Undervandskabler</h2>
-        <p>Internettet er forbundet via et netværk af undervandskabler, der er tusindvis af kilometer lange og ligger under havbunden. Disse kabler overfører data med høj hastighed og forbinder hele internettet.</p>
-        <div class="quiz">
-            <h3>Quiz: Hvad er undervandskabler?</h3>
-            <p>Hvad gør undervandskabler?</p>
-            <input type="radio" id="kabler1" name="kabler" value="correct">
-            <label for="kabler1">De forbinder internettrafik på tværs af kontinenter</label><br>
-            <input type="radio" id="kabler2" name="kabler" value="wrong">
-            <label for="kabler2">De er kun til opbevaring af data</label><br>
-            <input type="radio" id="kabler3" name="kabler" value="wrong">
-            <label for="kabler3">De bruges til at sende TV-signaler</label><br>
-            <button onclick="checkAnswer('kabler', 'kabler1')">Tjek svar</button>
-            <div class="quiz-result" id="kabler-result"></div>
-        </div>
-    </section>
-
-    <section id="servere" class="hidden">
-        <h2>Servere</h2>
-        <p>Servere er computere, der som regel opbevarer data, så vi kan tilgå dem over internettet. Når du ser en video eller sender en besked, går informationen gennem servere.</p>
-        <div class="quiz">
-            <h3>Quiz: Hvad er servere?</h3>
-            <p>Hvad gør servere?</p>
-            <input type="radio" id="server1" name="server" value="correct">
-            <label for="server1">De opbevarer og deler data over internettet</label><br>
-            <input type="radio" id="server2" name="server" value="wrong">
-            <label for="server2">De beskytter brugernes privatliv</label><br>
-            <input type="radio" id="server3" name="server" value="wrong">
-            <label for="server3">De bruges kun til at sende emails</label><br>
-            <button onclick="checkAnswer('server', 'server1')">Tjek svar</button>
-            <div class="quiz-result" id="server-result"></div>
-        </div>
-    </section>
-
-    <section id="detmørkenet" class="hidden">
-        <h2>Det Sorte Net</h2>
-        <p>Det mørke net er en del af internettet, der ikke er tilgængeligt via traditionelle søgemaskiner. Det bruges ofte anonymt og kræver specialsoftware som Tor-browseren for at få adgang.</p>
-        <div class="quiz">
-            <h3>Quiz: Hvad er det mørke net?</h3>
-            <p>Hvad gør det mørke net?</p>
-            <input type="radio" id="morkenet1" name="morkenet" value="correct">
-            <label for="morkenet1">Det bruges anonymt og kræver Tor-browseren</label><br>
-            <input type="radio" id="morkenet2" name="morkenet" value="wrong">
-            <label for="morkenet2">Det er den samme som internettet</label><br>
-            <input type="radio" id="morkenet3" name="morkenet" value="wrong">
-            <label for="morkenet3">Det bruges kun af regeringer</label><br>
-            <button onclick="checkAnswer('morkenet', 'morkenet1')">Tjek svar</button>
-            <div class="quiz-result" id="morkenet-result"></div>
-        </div>
-    </section>
+    <footer>
+        <p>© 2024 Internettets Verden</p>
+    </footer>
 
     <script>
-        function checkAnswer(section, correctAnswer) {
-            const selectedOption = document.querySelector(`input[name="${section}"]:checked`);
-            const result = document.getElementById(`${section}-result`);
-            if (selectedOption) {
-                if (selectedOption.value === 'correct') {
-                    result.textContent = 'Korrekt!';
-                    result.style.color = '#4CAF50';
-                } else {
-                    result.textContent = 'Forkert. Prøv igen!';
-                    result.style.color = '#FF5722';
-                }
-            } else {
-                result.textContent = 'Vælg et svar!';
-                result.style.color = '#FF5722';
-            }
-        }
-
         document.querySelectorAll('.link').forEach(link => {
             link.addEventListener('click', function(event) {
                 event.preventDefault();
