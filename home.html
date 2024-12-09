@@ -16,11 +16,11 @@
             text-align: center;
         }
         header {
-            background-color: #1abc9c; /* lysegrøn baggrund */
+            background-color: #1abc9c; /* Lysegrøn baggrund */
             color: #FFFFFF; /* Hvid tekst */
             padding: 30px 20px;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         header h1 {
@@ -33,7 +33,7 @@
             background-color: #212121;
             padding: 15px 0;
             text-align: center;
-            border-radius: 10px;
+            border-radius: 15px;
             margin: 20px 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
@@ -54,7 +54,7 @@
             padding: 20px;
             background-color: #282A36;
             margin-bottom: 30px;
-            border-radius: 15px;
+            border-radius: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         footer {
@@ -161,9 +161,24 @@
         </div>
     </section>
 
-    <!-- Repeat similar sections for 'vpn', 'kabler', 'servere', and 'detmørkenet' -->
+    <section id="vpn" class="hidden">
+        <h2>VPN</h2>
+        <p>VPN (Virtual Private Network) bruges til at skabe et sikkert og privat netværk over internettet. VPN krypterer din internetforbindelse og skjuler din IP-adresse, så din online aktivitet er beskyttet mod overvågning og hacking. VPN'er bruges ofte til at få adgang til indhold, der er geografisk begrænset, eller til at beskytte data på offentlige Wi-Fi-netværk.</p>
+        <div class="quiz">
+            <h3>Quiz: Hvad er en VPN?</h3>
+            <p>Hvad gør en VPN?</p>
+            <input type="radio" id="vpn1" name="vpn1" value="correct">
+            <label for="vpn1">Krypterer din internetforbindelse</label><br>
+            <input type="radio" id="vpn2" name="vpn1" value="wrong">
+            <label for="vpn2">Fjerner al internetaktivitet</label><br>
+            <input type="radio" id="vpn3" name="vpn1" value="wrong">
+            <label for="vpn3">Ændrer din IP-adresse til en tilfældig adresse</label><br>
+            <button onclick="checkAnswer('vpn')">Tjek svar</button>
+            <div class="quiz-result" id="vpn-result"></div>
+        </div>
+    </section>
 
-  
+    <!-- Repeat similar sections for 'kabler', 'servere', and 'detmørkenet' -->
 
     <script>
         const links = document.querySelectorAll(".link");
