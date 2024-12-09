@@ -187,6 +187,25 @@
     </section>
 
     <script>
+        // Function to randomize the order of quiz sections when the page loads
+        function randomizeQuizOrder() {
+            const sections = document.querySelectorAll('section');
+            const parent = document.querySelector('body');
+            
+            // Randomize the order of the sections
+            const sectionsArray = Array.from(sections);
+            const shuffledSections = sectionsArray.sort(() => Math.random() - 0.5);
+            
+            shuffledSections.forEach(section => {
+                parent.appendChild(section);
+            });
+        }
+
+        // Run the function to randomize the quiz sections order when the page loads
+        window.onload = function() {
+            randomizeQuizOrder();
+        };
+
         function checkAnswer(section, correctAnswer) {
             const selectedOption = document.querySelector(`input[name="${section}"]:checked`);
             const result = document.getElementById(`${section}-result`);
