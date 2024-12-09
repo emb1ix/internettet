@@ -10,20 +10,15 @@
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            background-color: #1E1E2F; /* Mørk baggrund */
-            color: #E0E0E0; /* Lys grå tekst */
+            background-color: #1E1E2F;
+            color: #E0E0E0;
             line-height: 1.6;
             text-align: center;
         }
         header {
-            background-color: #4CAF50; /* Grøn baggrund */
-            color: #FFFFFF; /* Hvid tekst */
+            background-color: #4CAF50;
+            color: #FFFFFF;
             padding: 20px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-            font-weight: bold;
         }
         nav {
             background-color: #212121;
@@ -59,6 +54,21 @@
         .hidden {
             display: none;
         }
+        .quiz {
+            margin-top: 20px;
+        }
+        .quiz button {
+            background-color: #4CAF50;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .quiz button:hover {
+            background-color: #45A049;
+        }
     </style>
 </head>
 <body>
@@ -77,30 +87,63 @@
 
     <section id="dns">
         <h2>DNS</h2>
-        <p>DNS (Domain Name System) er som en telefonbog for internettet. Den oversætter for eksempel google.com til hjemmesidens ip addresse, hvilket i googles tilfælde er 142.250.147.100</p>
+        <p>DNS (Domain Name System) er som en telefonbog for internettet. Den oversætter for eksempel google.com til hjemmesidens ip addresse, hvilket i Googles tilfælde er 142.250.147.100.</p>
+        <div class="quiz">
+            <h3>Quiz: Hvad gør DNS?</h3>
+            <button onclick="checkAnswer(this, true)">Oversætter domænenavne til IP-adresser</button>
+            <button onclick="checkAnswer(this, false)">Opretter sikre tunneller</button>
+        </div>
     </section>
 
     <section id="vpn" class="hidden">
         <h2>VPN</h2>
-        <p>VPN (Virtual Private Network) er en form for tunnel fra dig til en server. Det kan maske din identitet, fordi af internettet tror du er serveren når du bruger serverens ip addresse. </p>
+        <p>VPN (Virtual Private Network) er en form for tunnel fra dig til en server. Det kan maske din identitet, fordi internettet tror, du er serveren, når du bruger serverens IP-adresse.</p>
+        <div class="quiz">
+            <h3>Quiz: Hvad er en VPN?</h3>
+            <button onclick="checkAnswer(this, false)">En telefonbog for internettet</button>
+            <button onclick="checkAnswer(this, true)">En sikker tunnel til en server</button>
+        </div>
     </section>
 
     <section id="kabler" class="hidden">
         <h2>Undervandskabler</h2>
-        <p>Internettet er forbundet via et netværk af undervandskabler, der er tusindvis af kilometer af kabler under overfladen. Disse kabler overfører data med høj hastighed og forbinder hele internettet.</p>
+        <p>Internettet er forbundet via et netværk af undervandskabler, der er tusindvis af kilometer under overfladen. Disse kabler overfører data med høj hastighed og forbinder hele internettet.</p>
+        <div class="quiz">
+            <h3>Quiz: Hvad forbinder kontinenter til internettet?</h3>
+            <button onclick="checkAnswer(this, true)">Undervandskabler</button>
+            <button onclick="checkAnswer(this, false)">Satellitter</button>
+        </div>
     </section>
 
     <section id="servere" class="hidden">
         <h2>Servere</h2>
-        <p>Servere er computere, der som regelt opbevarer data, så vi kan tilgå dem over internettet. Når du ser en video eller sender en besked, går informationen gennem servere.</p>
+        <p>Servere er computere, der som regel opbevarer data, så vi kan tilgå dem over internettet. Når du ser en video eller sender en besked, går informationen gennem servere.</p>
+        <div class="quiz">
+            <h3>Quiz: Hvad er en servers funktion?</h3>
+            <button onclick="checkAnswer(this, true)">Opbevarer og deler data</button>
+            <button onclick="checkAnswer(this, false)">Undervandskommunikation</button>
+        </div>
     </section>
 
     <section id="detmørkenet" class="hidden">
         <h2>Det Sorte Net</h2>
-        <p>Det mørke net er en del af internettet, der ikke er tilgængelig via traditionelle søgemaskiner. Det bruges ofte anonymt og kræver specialsoftware som Tor-browseren for at få adgang.</p>
+        <p>Det mørke net er en del af internettet, der ikke er tilgængeligt via traditionelle søgemaskiner. Det bruges ofte anonymt og kræver specialsoftware som Tor-browseren for at få adgang.</p>
+        <div class="quiz">
+            <h3>Quiz: Hvad kræves for at tilgå det mørke net?</h3>
+            <button onclick="checkAnswer(this, false)">En VPN</button>
+            <button onclick="checkAnswer(this, true)">Tor-browser</button>
+        </div>
     </section>
 
     <script>
+        function checkAnswer(button, isCorrect) {
+            if (isCorrect) {
+                alert("Korrekt!");
+            } else {
+                alert("Forkert! Prøv igen.");
+            }
+        }
+
         document.querySelectorAll('.link').forEach(link => {
             link.addEventListener('click', function(event) {
                 event.preventDefault();
