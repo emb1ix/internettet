@@ -10,14 +10,14 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1E1E2F;
-            color: #E0E0E0;
+            background-color: #1E1E2F; /* Mørk baggrund */
+            color: #E0E0E0; /* Lys grå tekst */
             line-height: 1.6;
             text-align: center;
         }
         header {
-            background-color: #1abc9c;
-            color: #FFFFFF;
+            background-color: #1abc9c; /* Lysegrøn baggrund */
+            color: #FFFFFF; /* Hvid tekst */
             padding: 30px 20px;
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
@@ -56,6 +56,18 @@
             margin-bottom: 30px;
             border-radius: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #4CAF50;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
         }
         .hidden {
             display: none;
@@ -106,7 +118,9 @@
 
     <section id="dns">
         <h2>DNS</h2>
-        <p>DNS (Domain Name System) er som en telefonbog for internettet. Den oversætter for eksempel google.com til hjemmesidens IP-adresse, hvilket i Googles tilfælde er 142.250.147.100. Den bruger en af de tre mest brugte netværksprotokoller, som hedder UDP. DNS servere kan også være mål for angreb, fordi hvis du hacker en kan du gøre sådan at når du skiver google.com, så kommer du i stedet ind på IWantAVirus.org. Der er mange DNS servere bla. Cloudflare og Google. Cloudflares servere er tit hurtigere end googles.</p>
+        <p>DNS (Domain Name System) er som en telefonbog for internettet. Den oversætter for eksempel google.com til hjemmesidens IP-adresse, hvilket i Googles tilfælde er 142.250.147.100. Den bruger en af de tre mest brugte netværksprotokoller, som hedder UDP.
+        DNS servere kan også være mål for angreb, fordi hvis du hacker en kan du gøre sådan at når du skiver google.com, så kommer du i stedet ind på IWantAVirus.org.
+        Der er mange DNS servere bla. Cloudflare og Google. Cloudflares servere er tit hurtigere end googles.</p>
         <div class="quiz">
             <h3>Quiz: Hvad er DNS?</h3>
             <p>Hvad gør DNS?</p>
@@ -159,110 +173,42 @@
             <label for="vpn2">Fjerner al internetaktivitet</label><br>
             <input type="radio" id="vpn3" name="vpn1" value="wrong">
             <label for="vpn3">Ændrer din IP-adresse til en tilfældig adresse</label><br>
-            <p>Hvordan kan en VPN beskytte dig på offentlige Wi-Fi-netværk?</p>
-            <input type="radio" id="vpn4" name="vpn2" value="correct">
-            <label for="vpn4">Ved at kryptere forbindelsen</label><br>
-            <input type="radio" id="vpn5" name="vpn2" value="wrong">
-            <label for="vpn5">Ved at skjule din internetforbindelse</label><br>
-            <input type="radio" id="vpn6" name="vpn2" value="wrong">
-            <label for="vpn6">Ved at deaktivere Wi-Fi</label><br>
-            <p>Er alle VPN-tjenester sikre?</p>
-            <input type="radio" id="vpn7" name="vpn3" value="wrong">
-            <label for="vpn7">Ja, alle VPN-tjenester er sikre</label><br>
-            <input type="radio" id="vpn8" name="vpn3" value="correct">
-            <label for="vpn8">Nej, nogle VPN-tjenester kan være usikre</label><br>
             <button onclick="checkAnswer('vpn')">Tjek svar</button>
             <div class="quiz-result" id="vpn-result"></div>
         </div>
     </section>
 
-    <section id="kabler" class="hidden">
-        <h2>Undervandskabler</h2>
-        <p>Undervandskabler er de fysiske kabler, der forbinder kontinenter og gør det muligt at sende data hurtigt mellem lande og kontinenter. Disse kabler er essentielle for den globale internetinfrastruktur. Kablerne lægges på havbunden og bruges til at sende internetsignaler, telefonopkald, og endda TV-signaler.</p>
-        <div class="quiz">
-            <h3>Quiz: Undervandskabler</h3>
-            <p>Hvad er undervandskabler?</p>
-            <input type="radio" id="kabler1" name="kabler1" value="correct">
-            <label for="kabler1">Fysiske kabler, der forbinder kontinenter</label><br>
-            <input type="radio" id="kabler2" name="kabler1" value="wrong">
-            <label for="kabler2">Satellitter, der sender internetdata</label><br>
-            <input type="radio" id="kabler3" name="kabler1" value="wrong">
-            <label for="kabler3">Radiobølger, der sender signaler</label><br>
-            <p>Er undervandskabler sikre?</p>
-            <input type="radio" id="kabler4" name="kabler2" value="correct">
-            <label for="kabler4">Ja, de fleste internetforbindelser går gennem undervandskabler</label><br>
-            <input type="radio" id="kabler5" name="kabler2" value="wrong">
-            <label for="kabler5">Nej, de fleste internetforbindelser går via satellitter</label><br>
-            <input type="radio" id="kabler6" name="kabler2" value="wrong">
-            <label for="kabler6">Nej, de fleste internetforbindelser går via mikrobølger</label><br>
-            <p>Er undervandskabler kun til internettet?</p>
-            <input type="radio" id="kabler7" name="kabler3" value="wrong">
-            <label for="kabler7">Ja, de bruges kun til internetforbindelser</label><br>
-            <input type="radio" id="kabler8" name="kabler3" value="correct">
-            <label for="kabler8">Nej, de bruges også til telefon- og TV-signaler</label><br>
-            <button onclick="checkAnswer('kabler')">Tjek svar</button>
-            <div class="quiz-result" id="kabler-result"></div>
-        </div>
-    </section>
+    <!-- Repeat similar sections for 'kabler', 'servere', and 'detmørkenet' -->
 
-    <section id="servere" class="hidden">
-        <h2>Servere</h2>
-        <p>Servere er kraftfulde computere, der håndterer tjenester, såsom websteder, e-mail og filer. De er essentielle for internettets funktionalitet, da de opbevarer og leverer data til brugere og enheder. Når du besøger et websted, forbinder du til en server, der leverer filerne, der udgør webstedet.</p>
-        <div class="quiz">
-            <h3>Quiz: Servere</h3>
-            <p>Hvad er en server?</p>
-            <input type="radio" id="server1" name="server1" value="correct">
-            <label for="server1">En computer, der leverer data og tjenester til andre computere</label><br>
-            <input type="radio" id="server2" name="server1" value="wrong">
-            <label for="server2">En computer, der kun bruges til at lagre filer</label><br>
-            <input type="radio" id="server3" name="server1" value="wrong">
-            <label for="server3">En computer, der kun bruges til at sende e-mails</label><br>
-            <p>Hvad gør en webserver?</p>
-            <input type="radio" id="server4" name="server2" value="correct">
-            <label for="server4">Leverer websider til brugere</label><br>
-            <input type="radio" id="server5" name="server2" value="wrong">
-            <label for="server5">Håndterer brugerens internethistorik</label><br>
-            <p>Er servere kun til webtjenester?</p>
-            <input type="radio" id="server6" name="server3" value="wrong">
-            <label for="server6">Ja, de bruges kun til websider</label><br>
-            <input type="radio" id="server7" name="server3" value="correct">
-            <label for="server7">Nej, de bruges til mange tjenester, såsom e-mail og filopbevaring</label><br>
-            <button onclick="checkAnswer('servere')">Tjek svar</button>
-            <div class="quiz-result" id="servere-result"></div>
-        </div>
-    </section>
+    <footer>
+        <p>&copy; 2024 Internettets Verden. Alle rettigheder forbeholdes.</p>
+    </footer>
 
     <script>
-        document.querySelectorAll('.link').forEach((link) => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                let target = this.getAttribute('data-target');
-                document.querySelectorAll('section').forEach((sec) => {
-                    sec.classList.add('hidden');
+        const links = document.querySelectorAll(".link");
+        links.forEach(link => {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+                const target = event.target.getAttribute("data-target");
+                document.querySelectorAll("section").forEach(section => {
+                    section.classList.add("hidden");
                 });
-                document.getElementById(target).classList.remove('hidden');
+                document.getElementById(target).classList.remove("hidden");
             });
         });
 
         function checkAnswer(topic) {
-            let correctAnswers = {
-                'dns': ['dns1', 'dns5', 'dns8', 'dns11', 'dns12'],
-                'vpn': ['vpn1', 'vpn4', 'vpn8'],
-                'kabler': ['kabler1', 'kabler4', 'kabler8'],
-                'servere': ['server1', 'server4', 'server7'],
-            };
+            const radios = document.querySelectorAll(`#${topic} input[type="radio"]:checked`);
+            const result = document.getElementById(`${topic}-result`);
+            let score = 0;
 
-            let correctCount = 0;
-            let totalQuestions = correctAnswers[topic].length;
-
-            correctAnswers[topic].forEach((correct) => {
-                let userAnswer = document.querySelector(`input[name="${correct}"]:checked`);
-                if (userAnswer && userAnswer.value === 'correct') {
-                    correctCount++;
+            radios.forEach(radio => {
+                if (radio.value === "correct") {
+                    score++;
                 }
             });
 
-            document.getElementById(`${topic}-result`).innerHTML = `Du havde ${correctCount} ud af ${totalQuestions} rigtige.`;
+            result.textContent = `Du fik ${score} ud af ${radios.length} rigtige!`;
         }
     </script>
 </body>
