@@ -3,141 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>SlavHub</title>
+    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/emb1ix/gopnik/main/youtube-music-icon-2048x2048-11gyian5.ico"/>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #2B2B2B; /* Mørk grå baggrund */
+            color: #E0E0E0; /* Lys grå tekst */
+            line-height: 1.6;
+            text-align: center;
+        }
+        header {
+            background-color: #D32F2F; /* Rød baggrundsfarve */
+            color: #FFFFFF; /* Hvid tekstfarve */
+            padding: 20px;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .header-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f32b2b; /* Lys, ren baggrundsfarve */
+            margin-bottom: 20px;
         }
-        .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            width: 300px;
+        .logo {
+            max-width: 150px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 50%;
+            border: 3px solid #FFFFFF;
+        }
+        nav {
+            background-color: #212121; /* Sort baggrundsfarve */
+            padding: 15px 0;
             text-align: center;
-            animation: fadeIn 1s ease-in-out;
+            margin-bottom: 20px;
         }
-        .container h1 {
-            margin: 0 0 20px;
-            font-family: 'Georgia', serif;
-            color: #C8102E; /* Russisk rød farve */
-            animation: bounce 1s infinite;
-        }
-        .container label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 16px;
+        nav a {
+            color: #FFFFFF; /* Hvid tekstfarve */
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
             font-weight: bold;
-            color: #333; /* Mørk grå farve for tekst */
         }
-        .container input {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-bottom: 12px;
-            border: 2px solid #C8102E; /* Russisk rød farve */
-            border-radius: 6px;
-            font-size: 16px;
-            box-sizing: border-box; /* Sørg for at padding ikke udvider bredden */
+        nav a:hover {
+            text-decoration: underline;
+            color: #D32F2F; /* Rød ved hover */
         }
-        .container button {
-            width: calc(100% - 20px);
-            padding: 10px;
-            background-color: #C8102E; /* Russisk rød farve */
-            color: white;
-            border: none;
-            border-radius: 6px;
+        section {
+            padding: 20px;
+            background-color: #424242; /* Mørk grå baggrundsfarve */
+            margin-bottom: 20px;
+            border-radius: 5px;
+            color: #E0E0E0; /* Lys grå tekstfarve */
+        }
+        .bio {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .image-gallery img {
+            width: 100%;
+            height: 400px; /* Fixed height for all images */
+            object-fit: cover; /* Ensures image covers the set dimensions */
+            border: 3px solid #D32F2F; /* Rød kant om billederne */
             cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            animation: pulse 2s infinite;
         }
-        .container button:hover {
-            background-color: #a10e1e;
-            transform: scale(1.05);
+        footer {
+            background-color: #D32F2F; /* Rød baggrundsfarve */
+            color: #FFFFFF; /* Hvid tekstfarve */
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
-        .error {
-            color: #a10e1e;
-            margin-top: 10px;
+        .hidden {
+            display: none;
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
         }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-20px);
-            }
-            60% {
-                transform: translateY(-10px);
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                background-color: #C8102E;
-            }
-            50% {
-                transform: scale(1.05);
-                background-color: #a10e1e;
-            }
-            100% {
-                transform: scale(1);
-                background-color: #C8102E;
-            }
+        #user-info {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            background-color: #FFFFFF;
+            color: #D32F2F;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+            display: none; /* Skjult som standard */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Login</h1>
-        <form id="loginForm">
-            <label for="username">Brugernavn:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Adgangskode:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Log ind</button>
-            <div id="error" class="error"></div>
-        </form>
-    </div>
+    <header>
+        <div class="header-container">
+            <img src="https://i.postimg.cc/3J2PRrf4/dbf851fb-5544-4f95-8d1f-267bd83f9f93.jpg" alt="Gopnik Logo" class="logo">
+            <h1>SlavHub</h1>
+        </div>
+        <p>Velkommen til SlavHub - dit hub for Gopniks og russisk kultur!</p>
+    </header>
+
+    <nav>
+        <a href="#" class="link" data-target="omos">Om Os</a>
+        <a href="#" class="link" data-target="billeder">Billeder</a>
+        <a href="#" class="link" data-target="videoer">Videoer</a>
+        <a href="#" class="link" data-target="kontakt">Kontakt Os</a>
+        <a href="#" class="link" data-target="historie">Om Gopniks</a>
+    </nav>
+
+    <section id="omos">
+        <h2>Om Os</h2>
+        <p>Vi er dedikeret til at levere de seneste nyheder, billeder og videoer fra den russiske gopnik kultur. Vores passion for russisk kultur driver os til at levere det bedste indhold til vores brugere. Venligt hilsen de to danske gopniks</p>
+    </section>
+
+    <section id="billeder" class="hidden">
+        <h2>Billeder</h2>
+        <div class="image-gallery">
+            <div>
+                <img src="https://i.postimg.cc/Wb7pRtxj/Gopnik.jpg" alt="Gopnik 1">
+            </div>
+            <div>
+                <img src="https://i.postimg.cc/50JkM9hd/Gopnik-2.jpg" alt="Gopnik 2">
+            </div>
+            <div>
+                <img src="https://i.postimg.cc/x8xsHvcn/Gopnik-3.jpg" alt="Gopnik 3">
+            </div>
+            <div>
+                <img src="https://i.postimg.cc/R0VbkSkk/tmp-673f5ef6-2187-4734-8e3b-66d940cfaa5b.jpg" alt="Gopnik 4">
+            </div>
+            <div>
+                <img src="https://i.postimg.cc/4N5kqQW3/tmp-464db4ec-0a5c-4ab9-a614-28bd21c3ddb6.jpg" alt="Gopnik 5">
+            </div>
+            <div>
+                <img src="https://i.postimg.cc/C1qp2y2y/tmp-00354dad-2c62-48cc-84a0-bf28bff995b0.jpg" alt="Gopnik 7">
+            </div>
+            <div>
+                <img src="https://i.postimg.cc/FKqQGFDg/tmp-a09aca7c-6ad8-4bd0-b296-5df3d4d13713.jpg" alt="Gopnik 8">
+            </div>
+            <div>
+                <img src="https://i.postimg.cc/VsXcB8Mn/tmp-caa320e0-d7f9-491c-88c5-38f3bc8fb90d.jpg" alt="Gopnik 9">
+            </div>
+            <div>
+                <img src="https://i.postimg.cc/qRpzxyX8/tmp-f4a4f929-4016-446d-894e-8dc4f33d606e.jpg" alt="Gopnik 10">
+            </div>
+        </div>
+    </section>
+
+    <section id="videoer" class="hidden">
+        <h2>Videoer</h2>
+        <p>Velkommen til video-sektionen. Se de nyeste videoer af Gopniks her!</p>
+        <iframe width="280" height="157" src="https://www.youtube.com/embed/afP71xwLI8Y" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+    </section>
+
+    <section id="kontakt" class="hidden">
+        <h2>Kontakt Os</h2>
+        <p>Har du spørgsmål eller vil du oprette en profil? Send os en besked på slavhub48@gmail.com</p>
+    </section>
+
+    <section id="historie" class="hidden">
+        <h2>Om Gopniks</h2>
+        <p>Den Russiske Gopnik kultur started i 1980’erne som betegnelse for unge Arbejderklasse mænd,
+            som hang ud på gaden og drak alkohol og røg smøger. Det fortsatte op gennem 1990’erne og 00’erne.
+            Gopniks findes stadig, især i de Slaviske lande som Polen, Ukraine og Rusland.
+            Den typiske beklædning for Gopniks er enten normalt Arbejdertøj og lædertøj, eller den klassiske Adidas Tracksuit.
+            De bor typisk i Soviet-boligblokke, men bruger det meste af tiden på gaden, hvor de spiser Семечки (ristede og saltede solsikkefrø)
+            og drikker Квас (en fermenterede rugbrødsdrik).</p>
+    </section>
 
     <script>
-        // Liste over brugere med brugernavn og adgangskode
-        const users = [
-            { username: 'Alfred', password: 'Kurwa' },
-            { username: 'Oliver', password: '4565' },
-            { username: 'Admin', password: 'Admin' }
-            // Tilføj flere brugere her
-        ];
-
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const errorDiv = document.getElementById('error');
-
-            // Tjek om brugernavn og adgangskode matcher nogen i listen
-            const user = users.find(user => user.username === username && user.password === password);
-
-            if (user) {
-                // Redirect til home.html, hvis login er korrekt
-                window.location.href = 'home.html';
-            } else {
-                // Vis fejlmeddelelse, hvis login ikke er korrekt
-                errorDiv.textContent = 'Forkert brugernavn eller adgangskode.';
-            }
+        document.querySelectorAll('.link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+                const targetId = this.getAttribute('data-target');
+                document.getElementById(targetId).classList.remove('hidden');
+            });
         });
     </script>
 </body>
