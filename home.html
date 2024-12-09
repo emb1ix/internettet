@@ -180,16 +180,9 @@
             <label for="vpn6">Ved at deaktivere Wi-Fi</label><br>
             <p>Er alle VPN-tjenester lige sikre?</p>
             <input type="radio" id="vpn7" name="vpn3" value="wrong">
-            <label for="vpn7">Ja, alle VPN-tjenester tilbyder samme niveau af sikkerhed</label><br>
+            <label for="vpn7">Ja, alle VPN-tjenester er sikre</label><br>
             <input type="radio" id="vpn8" name="vpn3" value="correct">
-            <label for="vpn8">Nej, nogle tilbyder bedre kryptering og beskyttelse</label><br>
-            <p>Hvad betyder VPN?</p>
-            <input type="radio" id="vpn9" name="vpn4" value="wrong">
-            <label for="vpn9">Very Private Network</label><br>
-            <input type="radio" id="vpn10" name="vpn4" value="correct">
-            <label for="vpn10">Virtual Private Network</label><br>
-            <input type="radio" id="vpn11" name="vpn4" value="wrong">
-            <label for="vpn11">Virtual Public Network</label><br>
+            <label for="vpn8">Nej, nogle VPN-tjenester kan være usikre</label><br>
             <button onclick="checkAnswer('vpn')">Tjek svar</button>
             <div class="quiz-result" id="vpn-result"></div>
         </div>
@@ -197,17 +190,17 @@
 
     <section id="kabler" class="hidden">
         <h2>Undervandskabler</h2>
-        <p>Undervandskabler er fysiske kabler, der strækker sig over havet og forbinder kontinenterne, hvilket gør det muligt at overføre data mellem lande. De fleste af verdens internetforbindelser går gennem disse kabler, og de spiller en afgørende rolle i global kommunikation. Uden disse kabler ville internettet være meget langsommere, og nogle steder kunne det være svært at få adgang til internettet.</p>
+        <p>Undervandskabler er de fysiske kabler, der forbinder kontinenter og gør det muligt at sende data hurtigt mellem lande og kontinenter. Disse kabler er essentielle for den globale internetinfrastruktur. Kablerne lægges på havbunden og bruges til at sende internetsignaler, telefonopkald, og endda TV-signaler.</p>
         <div class="quiz">
             <h3>Quiz: Undervandskabler</h3>
-            <p>Hvilken funktion har undervandskabler?</p>
+            <p>Hvad er undervandskabler?</p>
             <input type="radio" id="kabler1" name="kabler1" value="correct">
-            <label for="kabler1">De overfører data mellem kontinenter</label><br>
+            <label for="kabler1">Fysiske kabler, der forbinder kontinenter</label><br>
             <input type="radio" id="kabler2" name="kabler1" value="wrong">
-            <label for="kabler2">De skaber trådløse forbindelser</label><br>
+            <label for="kabler2">Satellitter, der sender internetdata</label><br>
             <input type="radio" id="kabler3" name="kabler1" value="wrong">
-            <label for="kabler3">De beskytter mod hacking</label><br>
-            <p>Er de fleste internetforbindelser afhængige af undervandskabler?</p>
+            <label for="kabler3">Radiobølger, der sender signaler</label><br>
+            <p>Er undervandskabler sikre?</p>
             <input type="radio" id="kabler4" name="kabler2" value="correct">
             <label for="kabler4">Ja, de fleste internetforbindelser går gennem undervandskabler</label><br>
             <input type="radio" id="kabler5" name="kabler2" value="wrong">
@@ -250,6 +243,11 @@
             <div class="quiz-result" id="servere-result"></div>
         </div>
     </section>
+
+    <footer>
+        <p>&copy; 2024 Internettet. Alle rettigheder forbeholdes.</p>
+    </footer>
+
     <script>
         document.querySelectorAll('.link').forEach((link) => {
             link.addEventListener('click', function(e) {
@@ -265,21 +263,26 @@
         function checkAnswer(topic) {
             let correctAnswers = {
                 'dns': ['dns1', 'dns5', 'dns8', 'dns11', 'dns12'],
-                'vpn': ['vpn1', 'vpn4', 'vpn8', 'vpn10', 'vpn4'],
+                'vpn': ['vpn1', 'vpn4', 'vpn8'],
                 'kabler': ['kabler1', 'kabler4', 'kabler8'],
                 'servere': ['server1', 'server4', 'server7'],
             };
 
+            let correctCount = 0;
+            let totalQuestions = correctAnswers[topic].length;
             let resultText = '';
+
             correctAnswers[topic].forEach((correct) => {
                 let userAnswer = document.querySelector(`input[name="${correct}"]:checked`);
                 if (userAnswer && userAnswer.value === 'correct') {
-                    resultText += 'Korrekt!<br>';
+                    correctCount++;
+                    resultText += `Spørgsmål "${document.querySelector(`label[for="${correct}"]`).textContent}" er korrekt!<br>`;
                 } else {
-                    resultText += 'Forkert!<br>';
+                    resultText += `Spørgsmål "${document.querySelector(`label[for="${correct}"]`).textContent}" er forkert!<br>`;
                 }
             });
 
+            resultText += `<br>Du havde ${correctCount} ud af ${totalQuestions} rigtige.`;
             document.getElementById(`${topic}-result`).innerHTML = resultText;
         }
     </script>
