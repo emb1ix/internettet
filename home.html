@@ -57,18 +57,6 @@
             border-radius: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        footer {
-            background-color: #4CAF50;
-            color: #FFFFFF;
-            text-align: center;
-            padding: 15px 20px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
-        }
         .hidden {
             display: none;
         }
@@ -178,7 +166,7 @@
             <label for="vpn5">Ved at skjule din internetforbindelse</label><br>
             <input type="radio" id="vpn6" name="vpn2" value="wrong">
             <label for="vpn6">Ved at deaktivere Wi-Fi</label><br>
-            <p>Er alle VPN-tjenester lige sikre?</p>
+            <p>Er alle VPN-tjenester sikre?</p>
             <input type="radio" id="vpn7" name="vpn3" value="wrong">
             <label for="vpn7">Ja, alle VPN-tjenester er sikre</label><br>
             <input type="radio" id="vpn8" name="vpn3" value="correct">
@@ -244,10 +232,6 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Internettet. Alle rettigheder forbeholdes.</p>
-    </footer>
-
     <script>
         document.querySelectorAll('.link').forEach((link) => {
             link.addEventListener('click', function(e) {
@@ -270,20 +254,15 @@
 
             let correctCount = 0;
             let totalQuestions = correctAnswers[topic].length;
-            let resultText = '';
 
             correctAnswers[topic].forEach((correct) => {
                 let userAnswer = document.querySelector(`input[name="${correct}"]:checked`);
                 if (userAnswer && userAnswer.value === 'correct') {
                     correctCount++;
-                    resultText += `Spørgsmål "${document.querySelector(`label[for="${correct}"]`).textContent}" er korrekt!<br>`;
-                } else {
-                    resultText += `Spørgsmål "${document.querySelector(`label[for="${correct}"]`).textContent}" er forkert!<br>`;
                 }
             });
 
-            resultText += `<br>Du havde ${correctCount} ud af ${totalQuestions} rigtige.`;
-            document.getElementById(`${topic}-result`).innerHTML = resultText;
+            document.getElementById(`${topic}-result`).innerHTML = `Du havde ${correctCount} ud af ${totalQuestions} rigtige.`;
         }
     </script>
 </body>
