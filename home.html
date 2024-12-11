@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internettet</title>
+    <link rel="shortcut icon" type="image/png" href="https://www.pngmart.com/files/7/Internet-Globe-PNG-HD.png"/>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1E1E2F; /* Mørk baggrund */
+            color: #E0E0E0; /* Lys grå tekst */
+            line-height: 1.6;
+            text-align: center;
+        }
+        header {
+            background-color: #1abc9c; /* Lysegrøn baggrund */
+            color: #FFFFFF; /* Hvid tekst */
+            padding: 30px 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 42px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        nav {
+            background-color: #212121;
+            padding: 15px 0;
+            text-align: center;
+            border-radius: 15px;
+            margin: 20px 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #4CAF50;
+        }
+        section {
+            padding: 20px;
+            background-color: #282A36;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #4CAF50;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .hidden {
+            display: none;
+        }
+        .quiz {
+            margin-top: 20px;
+            text-align: left;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .quiz input {
+            margin: 10px 0;
+        }
+        .quiz button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .quiz button:hover {
+            background-color: #45a049;
+        }
+        .quiz-result {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #FF5722;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Internettets Verden</h1>
+        <p>Udforsk hvordan internettet fungerer, fra DNS til undervandskabler!</p>
+    </header>
+
+    <nav>
+        <a href="#" class="link" data-target="dns">DNS</a>
+        <a href="#" class="link" data-target="vpn">VPN</a>
+        <a href="#" class="link" data-target="kabler">Undervandskabler</a>
+        <a href="#" class="link" data-target="servere">Servere</a>
+        <a href="#" class="link" data-target="detsortenet">Det Sorte Net</a>
+    </nav>
+
+    <section id="dns">
+        <h2>DNS</h2>
+        <p>DNS (Domain Name System) er som en telefonbog for internettet. Den oversætter for eksempel google.com til hjemmesidens IP-adresse, hvilket i Googles tilfælde er 142.250.147.100. Den bruger en af de tre mest brugte netværksprotokoller, som hedder UDP.
+        Netværksprotokoller er et form for sprog kun elektronik forstår.
+        DNS servere kan også være mål for angreb, fordi hvis du hacker sådan en, kan du gøre sådan at når du skiver google.com, så kommer du i stedet ind på IWantAVirus.org.
+        Der er mange DNS servere bla. Cloudflare og Google. Cloudflares servere er tit hurtigere end googles, fordi de kun fokusere på DNS, mens google fokusere mere på andre ting.</p>
+        <div class="quiz">
+            <h3>Quiz: Hvad er DNS?</h3>
+            <p>Hvad gør DNS?</p>
+            <input type="radio" id="dns1" name="dns1" value="correct">
+            <label for="dns1">Oversætter domænenavne til IP-adresser</label><br>
+            <input type="radio" id="dns2" name="dns1" value="wrong">
+            <label for="dns2">Håndterer kun webtrafik</label><br>
+            <input type="radio" id="dns3" name="dns1" value="wrong">
+            <label for="dns3">Krypterer internetforbindelser</label><br>
+            <p>Hvad betyder DNS?</p>
+            <input type="radio" id="dns4" name="dns2" value="wrong">
+            <label for="dns4">Data Network System</label><br>
+            <input type="radio" id="dns5" name="dns2" value="correct">
+            <label for="dns5">Domain Name System</label><br>
+            <input type="radio" id="dns6" name="dns2" value="wrong">
+            <label for="dns6">Direct Network Service</label><br>
+            <p>Hvilken protokol bruges til DNS-opslag?</p>
+            <input type="radio" id="dns7" name="dns3" value="wrong">
+            <label for="dns7">HTTP</label><br>
+            <input type="radio" id="dns8" name="dns3" value="correct">
+            <label for="dns8">UDP</label><br>
+            <input type="radio" id="dns9" name="dns3" value="wrong">
+            <label for="dns9">FTP</label><br>
+            <p>Er DNS-servere sikre?</p>
+            <input type="radio" id="dns10" name="dns4" value="wrong">
+            <label for="dns10">Ja, de er altid sikre</label><br>
+            <input type="radio" id="dns11" name="dns4" value="correct">
+            <label for="dns11">Nej, de kan være mål for angreb</label><br>
+            <p>Hvordan kan du bruge en DNS-server til at forbedre internethastigheden?</p>
+            <input type="radio" id="dns12" name="dns5" value="correct">
+            <label for="dns12">Ved at vælge en hurtigere offentlig DNS-server</label><br>
+            <input type="radio" id="dns13" name="dns5" value="wrong">
+            <label for="dns13">Ved at deaktivere DNS</label><br>
+            <input type="radio" id="dns14" name="dns5" value="wrong">
+            <label for="dns14">Ved at ændre din IP-adresse</label><br>
+            <button onclick="checkAnswer('dns')">Tjek svar</button>
+            <div class="quiz-result" id="dns-result"></div>
+        </div>
+    </section>  
+
+    <section id="vpn" class="hidden">
+        <h2>VPN</h2>
+        <p>VPN (Virtual Private Network) bruges til at skabe et sikkert og privat netværk over internettet. Det er på en måde en tunnel, der teleportere dig fra dit hjem til serveren.
+            VPN krypterer din internetforbindelse og skjuler din IP-adresse, så din online aktivitet er beskyttet mod overvågning og hacking. 
+            VPN'er bruges ofte til at få adgang til indhold, der er geografisk begrænset eller billigere andre steder i verden, som f.eks streaming tjenster.
+            Det bruges også til at beskytte data på offentlige Wi-Fi-netværk.</p>
+               <div class="quiz">
+            <h3>Quiz: Hvad er VPN?</h3>
+            <p>Hvad gør en VPN?</p>
+            <input type="radio" id="vpn1" name="vpn1" value="wrong">
+            <label for="dns1">Gør dig et mål for hackere</label><br>
+            <input type="radio" id="vpn2" name="vpn1" value="correct">
+            <label for="dns2">Skjuler din IP addresse</label><br>
+            <input type="radio" id="vpn3" name="vpn1" value="wrong">
+            <label for="dns3">Gør din internetforbindelse hurtigere</label><br>
+            <p>Hvad betyder VPN?</p>
+            <input type="radio" id="vpn4" name="vpn2" value="wrong">
+            <label for="dns4">Viral Populating Network</label><br>
+            <input type="radio" id="vpn5" name="vpn2" value="correct">
+            <label for="dns5">Virtual Private Network</label><br>
+            <input type="radio" id="vpn6" name="vpn2" value="wrong">
+            <label for="dns6">Ventus plastatikes Nikas</label><br>
+            <p>Hvad er det ord der passer bedst ind i emnet VPN?</p>
+            <input type="radio" id="vpn7" name="vpn3" value="correct">
+            <label for="dns7">Tunnel</label><br>
+            <input type="radio" id="vpn8" name="vpn3" value="wrong">
+            <label for="dns8">Telefoner</label><br>
+            <input type="radio" id="vpn9" name="vpn3" value="wrong">
+            <label for="dns9">Program</label><br>
+            <p>Er VPN normalt sikre?</p>
+            <input type="radio" id="vpn10" name="vpn4" value="wrong">
+            <label for="dns10">Ja, de er altid sikre</label><br>
+            <input type="radio" id="vpn11" name="vpn4" value="correct">
+            <label for="dns11">Nej, de billige kan indholde virusser</label><br>
+            <p>Hvorfor bruger folk tit en VPN</p>
+            <input type="radio" id="vpn12" name="dns5" value="wrong">
+            <label for="dns12">For at kunne få bedre kamera kvalitet</label><br>
+            <input type="radio" id="vpn13" name="vpn5" value="wrong">
+            <label for="dns13">For at få bedre internetforbindelse</label><br> 
+            <input type="radio" id="vpn14" name="vpn5" value="correct">
+            <label for="dns14">For at få billgere streaming</label><br>
+            <button onclick="checkAnswer('vpn')">Tjek svar</button>
+            <div class="quiz-result" id="vpn-result"></div>
+        </div>
+    </section>
+
+    <section id="kabler" class="hidden">
+        <h2>Undervandskabler</h2>
+        <p>Undervandskabler er internetkabler, der kører i mange kilometer under havbunden, og tilslutter alle servere til det vi kalder internettet. Det længste i verden tilslutter Europa og Australien, det kabel er 39.000 km langt!
+            Det er også muligt at undervandskabler kan blive erstattet af satelitter, men satelitter er stadig MEGET langsomere end undervandskabler.
+        </p>
+               <div class="quiz">
+            <h3>Quiz: Hvad er undervandskabler?</h3>
+            <p>Hvad gør et undervandskabel?</p>
+            <input type="radio" id="vpn1" name="dns1" value="wrong">
+            <label for="dns1">Giver strøm til niger</label><br>
+            <input type="radio" id="vpn2" name="dns1" value="correct">
+            <label for="kabler2">Tilslutter verdens servere sammen, til det vi kender som internettet.</label><br>
+            <input type="radio" id="vpn3" name="dns1" value="wrong">
+            <label for="kabler3">Dirigerer både i stillehavet</label><br>
+            <p>Hvor langt er det længste internet kabel i verden?</p>
+            <input type="radio" id="kabler4" name="kabler2" value="wrong">
+            <label for="kabler4">4.000 km</label><br>
+            <input type="radio" id="kabler5" name="kabler2" value="correct">
+            <label for="kabler5">39.000 km</label><br>
+            <input type="radio" id="kabler6" name="kabler2" value="wrong">
+            <label for="kabler">21.000 km</label><br>
+            <p>Hvordan kan man få internet ud over undervandskabler?</p>
+            <input type="radio" id="kabler7" name="kabler3" value="correct">
+            <label for="kabler">Satelitter</label><br>
+            <input type="radio" id="kabler8" name="kabler3" value="wrong">
+            <label for="kabler8">Opladerstik</label><br>
+            <input type="radio" id="kabler9" name="kabler3" value="wrong">
+            <label for="kabler9">fiber opsike kabler</label><br>
+            <p>Kan undervandskabler være mål for angreb?</p>
+            <input type="radio" id="kabler10" name="kabler4" value="correct">
+            <label for="kabler10">Ja</label><br>
+            <input type="radio" id="kabler11" name="kabler4" value="wrong">
+            <label for="kabler11">Nej</label><br>
+            <p>Hvorfor bruger man stadig internetkabler og ikke Satelitter</p>
+            <input type="radio" id="kabler12" name="kabler5" value="wrong">
+            <label for="kabler12">Fordi det allerede er lagt</label><br>
+            <input type="radio" id="kabler13" name="kabler5" value="correct">
+            <label for="kabler13">For at få bedre internetforbindelse</label><br>
+            <input type="radio" id="kabler14" name="kabler5" value="wrong">
+            <label for="kabler4">Fordi Starlink ejer hele verdensrummet</label><br>
+            <button onclick="checkAnswer('kabler')">Tjek svar</button>
+            <div class="quiz-result" id="kabler-result"></div>
+        </div>
+    </section>
+
+    <section id="servere" class="hidden">
+        <h2>Servere</h2>
+        <p>Servere er computere, der hjælper med at gemme og sende information på internettet. Når du f.eks. åbner en hjemmeside, henter din computer data fra en server.
+             Der findes mange typer servere, som webservere, der viser hjemmesider, og fileserver, der opbevarer filer. Et stort firma som Amazon eller Google bruger mange servere til deres tjenester.
+            Der findes også noget der hedder en virtuel server, det findes kun som software, og er egentlig bare en server inden i en server.</p>
+        <div class="quiz">
+            <h3>Quiz: Hvad er servere?</h3>
+            <p>Hvad er en server?</p>
+            <input type="radio" id="server1" name="server1" value="correct">
+            <label for="server1">En computer, der gemmer og sender data</label><br>
+            <input type="radio" id="server2" name="server1" value="wrong">
+            <label for="server2">En slags netværkskabel</label><br>
+            <input type="radio" id="server3" name="server1" value="wrong">
+            <label for="server3">En app på din telefon</label><br>
+            <p>Hvad bruges en webserver til?</p>
+            <input type="radio" id="server4" name="server2" value="correct">
+            <label for="server4">At vise hjemmesider</label><br>
+            <input type="radio" id="server5" name="server2" value="wrong">
+            <label for="server5">At sende SMS'er</label><br>
+            <input type="radio" id="server6" name="server2" value="wrong">
+            <label for="server6">At reparere computere</label><br>
+            <p>Hvilket firma er kendt for deres mange servere?</p>
+            <input type="radio" id="server7" name="server3" value="correct">
+            <label for="server7">Amazon</label><br>
+            <input type="radio" id="server8" name="server3" value="wrong">
+            <label for="server8">YouTube</label><br>
+            <input type="radio" id="server9" name="server3" value="wrong">
+            <label for="server9">Minecraft</label><br>
+            <p>Hvad kaldes en server, der gemmer filer?</p>
+            <input type="radio" id="server10" name="server4" value="correct">
+            <label for="server10">Fileserver</label><br>
+            <input type="radio" id="server11" name="server4" value="wrong">
+            <label for="server11">Webserver</label><br>
+            <input type="radio" id="server12" name="server4" value="wrong">
+            <label for="server12">Mailserver</label><br>
+            <p>Hvad er en virtuel server?</p>
+            <input type="radio" id="server13" name="server5" value="correct">
+            <label for="server13">En server, der kun findes som software</label><br>
+            <input type="radio" id="server14" name="server5" value="wrong">
+            <label for="server14">En fysisk computer</label><br>
+            <input type="radio" id="server15" name="server5" value="wrong">
+            <label for="server15">En server, der er offline</label><br>
+            <button onclick="checkAnswer('servere')">Tjek svar</button>
+            <div class="quiz-result" id="servere-result"></div>
+        </div>
+    </section>
+    
+    <section id="detsortenet" class="hidden">
+        <h2>Det Sorte Net</h2>
+        <p>Det Sorte Net, eller Darknet, er en skjult del af internettet. Du kan ikke bruge almindelige browsere til at få adgang, men skal bruge programmer som Tor.
+             Det bruges både til gode ting, som at beskytte privatliv, og dårlige ting, som ulovlig handel. Det er vigtigt at huske, at Darknet ikke er det samme som Deep Web, som bare er sider, normale søgemaskiner ikke viser.</p>
+        <div class="quiz">
+            <h3>Quiz: Hvad er Det Sorte Net?</h3>
+            <p>Hvad skal du bruge for at få adgang til Det Sorte Net?</p>
+            <input type="radio" id="darknet1" name="darknet1" value="correct">
+            <label for="darknet1">Et program som Tor</label><br>
+            <input type="radio" id="darknet2" name="darknet1" value="wrong">
+            <label for="darknet2">En speciel internetforbindelse</label><br>
+            <input type="radio" id="darknet3" name="darknet1" value="wrong">
+            <label for="darknet3">Et særligt abonnement</label><br>
+            <p>Hvad er forskellen på Deep Web og Darknet?</p>
+            <input type="radio" id="darknet4" name="darknet2" value="wrong">
+            <label for="darknet4">Det er det samme</label><br>
+            <input type="radio" id="darknet5" name="darknet2" value="correct">
+            <label for="darknet5">Deep Web er ikke ulovligt, Darknet er ulovligt.</label><br>
+            <input type="radio" id="darknet6" name="darknet2" value="wrong">
+            <label for="darknet6">Deep Web er ulovligt</label><br>
+            <p>Hvad bruges Tor til?</p>
+            <input type="radio" id="darknet7" name="darknet3" value="wrong">
+            <label for="darknet7">At streame videoer</label><br>
+            <input type="radio" id="darknet8" name="darknet3" value="wrong">
+            <label for="darknet8">At spille online spil</label><br>
+            <input type="radio" id="darknet9" name="darknet3" value="correct">
+            <label for="darknet9">At beskytte dit privatliv</label><br>
+            <p>Hvilket netværk bruges ofte på Det Sorte Net?</p>
+            <input type="radio" id="darknet10" name="darknet4" value="correct">
+            <label for="darknet10">Tor</label><br>
+            <input type="radio" id="darknet11" name="darknet4" value="wrong">
+            <label for="darknet11">Wi-Fi</label><br>
+            <input type="radio" id="darknet12" name="darknet4" value="wrong">
+            <label for="darknet12">VPN</label><br>
+            <p>Hvad er en risiko ved at bruge Det Sorte Net?</p>
+            <input type="radio" id="darknet13" name="darknet5" value="wrong">
+            <label for="darknet13">At få dårlig internethastighed</label><br>
+            <input type="radio" id="darknet14" name="darknet5" value="correct">
+            <label for="darknet14">At blive udsat for hacking<br>
+            <input type="radio" id="darknet15" name="darknet5" value="wrong">
+            <label for="darknet15">At computeren slukker</label><br>
+            <button onclick="checkAnswer('detsortenet')">Tjek svar</button>
+            <div class="quiz-result" id="detsortenet-result"></div>
+        </div>
+    </section>
+    
+    <!-- Repeat similar sections for 'kabler', 'servere', and 'detsortenet' -->
+    <script>
+        const links = document.querySelectorAll(".link");
+        links.forEach(link => {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+                const target = event.target.getAttribute("data-target");
+                document.querySelectorAll("section").forEach(section => {
+                    section.classList.add("hidden");
+                });
+                document.getElementById(target).classList.remove("hidden");
+            });
+        });
+
+        function checkAnswer(topic) {
+            const radios = document.querySelectorAll(`#${topic} input[type="radio"]:checked`);
+            const result = document.getElementById(`${topic}-result`);
+            let score = 0;
+
+            radios.forEach(radio => {
+                if (radio.value === "correct") {
+                    score++;
+                }
+            });
+
+            result.textContent = `Du fik ${score} ud af ${radios.length} rigtige!`;
+        }
+    </script>
+</body>
+</html>
